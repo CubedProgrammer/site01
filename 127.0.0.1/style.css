@@ -1,0 +1,163 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #000020;
+	color: #E0E0E0;
+}
+td
+{
+	border: none;
+	width: 512px;
+	height: 40px;
+	text-align: center;
+}
+td a
+{
+	text-decoration: none;
+	color: inherit;
+}
+td a:visited
+{
+	color: inherit;
+}
+button
+{
+	color: inherit;
+	font-family: inherit;
+	font-size: 32px;
+	text-align: center;
+	padding: 4px 0;
+	width: 320px;
+	height: 64px;
+}
+button.table
+{
+	background-color: #002000;
+	border: 8px outset #002000;
+}
+button.table:hover,button.table:focus
+{
+	background-color: #004000;
+	border: 8px outset #004000;
+}
+button.table:active
+{
+	border: 8px inset #004000;
+}
+button.order
+{
+	background-color: #200000;
+	border: 8px outset #200000;
+}
+button.order:hover,button.order:focus
+{
+	background-color: #400000;
+	border: 8px outset #400000;
+}
+button.order:active
+{
+	border: 8px inset #400000;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+	margin: 16px;
+}
+.subtitle
+{
+	font-size: 48px;
+	text-align: center;
+	margin: 16px;
+}
+.paragraph
+{
+	font-size: inherit;
+}
+.subparagraph
+{
+	font-size: 16px;
+}
+.centertext
+{
+	text-align: center;
+}
+.centertext:hover
+{
+	color: #FFFFFF;
+}
+.code
+{
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.detailtable tr:hover
+{
+	background-color: #000040;
+	color: #FFFFFF;
+}
+.gridtable td
+{
+	transition: 500ms;
+}
+.gridtable a
+{
+	transition: 500ms;
+}
+.gridtable td:hover,.gridtable a:focus
+{
+	background-color: #000040;
+	color: #FFFFFF;
+}
+.gridtable .Scell:hover,.gridtable .Dcell a:focus
+{
+	background-color: #404000;
+	color: #0000FF;
+}
+.gridtable .Scell:hover,.gridtable .Scell a:focus
+{
+	background-color: #404000;
+	color: #00FFFF;
+}
+.gridtable .Vcell:hover,.gridtable .Vcell a:focus
+{
+	background-color: #404000;
+	color: #00FF00;
+}
+.polytope
+{
+	margin: auto;
+	border: 1px solid #FFFFFF;
+	border-spacing: 0;
+}
+.polytope td
+{
+	border: 1px solid #FFFFFF;
+	width: 288px;
+}
+.simplex:hover
+{
+	background-color: #800000;
+}
+.measure:hover
+{
+	background-color: #008000;
+}
+.cross:hover
+{
+	background-color: #000080;
+}
+.exceptional:hover
+{
+	background-color: #404040;
+}
+.display-buttons
+{
+	text-align: center;
+}
+#filetable
+{
+	margin: auto;
+	border-spacing: 0;
+}

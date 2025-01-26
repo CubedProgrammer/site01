@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hexahedron</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<p class="title">Hexahedron</p>
+		<p class="subtitle">Information and Instructions</p>
+		<p class="paragraph"><span class="code">REGULAR FILE</span> means static web page, <span class="code">VIRTUAL FILE</span> means dynamic web page, <span class="code">DIRECTORY</span> means a folder that can contain other web pages, <span class="code">SYMBOLIC LINK</span> means a redirect.</p>
+		<p class="subparagraph">These buttons change how the following pages are displayed, detailed display is one file per row, with the file type, grid display is simply a grid with the links, reverse will reverse the order the files are displayed, sort will sort the files by the specified criteria.</p>
+		<p class="subtitle">Pages</p>
+		<div class="display-buttons">
+			<button class="table" id="detail">Detail Display</button>
+			<button class="table" id="grid">Grid Display</button>
+		</div>
+		<div class="display-buttons">
+			<button class="order" id="reverse">Reverse Files</button>
+			<button class="order" id="sortname">Sort By Name</button>
+			<button class="order" id="sorttype">Sort By Type</button>
+		</div>
+		<table id="filetable">
+			<tbody class="detailtable">
+				<tr>
+					<td><a href="index.html">index.html</a></td>
+					<td>REGULAR FILE</td>
+				</tr>
+				<tr>
+					<td><a href="style.css">style.css</a></td>
+					<td>REGULAR FILE</td>
+				</tr>
+				<tr>
+					<td><a href="script.js">script.js</a></td>
+					<td>REGULAR FILE</td>
+				</tr>
+				<tr>
+					<td><a href="index.html">index.html</a></td>
+					<td>VIRTUAL FILE</td>
+				</tr>
+				<tr>
+					<td><a href="style.css">style.css</a></td>
+					<td>SYMBOLIC LINK</td>
+				</tr>
+				<tr>
+					<td><a href="script.js">script.js</a></td>
+					<td>DIRECTORY</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="subtitle">Meaning of the Name</p>
+		<p class="paragraph">A polyhedron is a shape in three dimensions with flat polygonal faces, straight edges, and sharp corners. A hexahedron specifically has six faces, such as a cube. A hexahedron always has four more edges than vertices.</p>
+		<p class="paragraph">A regular polyhedron have all faces congruent, all edges equal, and all vertices equal.</p>
+		<p class="subtitle">Regular Polyhedra</p>
+		<table class="polytope">
+			<tbody>
+				<tr class="simplex">
+					<td>Tetrahedron</td>
+					<td>4</td>
+					<td>6</td>
+					<td>4</td>
+					<td>3 3</td>
+				</tr>
+				<tr class="measure">
+					<td>Hexahedron</td>
+					<td>8</td>
+					<td>12</td>
+					<td>6</td>
+					<td>4 3</td>
+				</tr>
+				<tr class="cross">
+					<td>Octahedron</td>
+					<td>6</td>
+					<td>12</td>
+					<td>8</td>
+					<td>3 4</td>
+				</tr>
+				<tr class="exceptional">
+					<td>Dodecahedron</td>
+					<td>20</td>
+					<td>30</td>
+					<td>12</td>
+					<td>5 3</td>
+				</tr>
+				<tr class="exceptional">
+					<td>Icosahedron</td>
+					<td>12</td>
+					<td>30</td>
+					<td>20</td>
+					<td>3 5</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="subtitle">Regular Polychorons</p>
+		<table class="polytope">
+			<tbody>
+				<tr class="simplex">
+					<td>Pentachoron</td>
+					<td>5</td>
+					<td>10</td>
+					<td>10</td>
+					<td>5</td>
+					<td>3 3 3</td>
+				</tr>
+				<tr class="measure">
+					<td>Octachoron</td>
+					<td>16</td>
+					<td>32</td>
+					<td>24</td>
+					<td>8</td>
+					<td>4 3 3</td>
+				</tr>
+				<tr class="cross">
+					<td>Hexadecachoron</td>
+					<td>8</td>
+					<td>24</td>
+					<td>32</td>
+					<td>16</td>
+					<td>3 3 4</td>
+				</tr>
+				<tr class="exceptional">
+					<td>24-cell</td>
+					<td>24</td>
+					<td>96</td>
+					<td>96</td>
+					<td>24</td>
+					<td>3 4 3</td>
+				</tr>
+				<tr class="exceptional">
+					<td>120-cell</td>
+					<td>600</td>
+					<td>1200</td>
+					<td>720</td>
+					<td>120</td>
+					<td>5 3 3</td>
+				</tr>
+				<tr class="exceptional">
+					<td>600-cell</td>
+					<td>120</td>
+					<td>720</td>
+					<td>1200</td>
+					<td>600</td>
+					<td>3 3 5</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="subtitle">Useful Formulas</p>
+		<p class="centertext"><em>e<sup>i&#960;</sup>+1=0</em></p>
+		<p class="centertext"><em>V-E+F=2</em></p>
+		<p class="centertext"><em>a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup></em></p>
+		<p class="centertext"><em>a<sup>2</sup>+b<sup>2</sup>-2ab*cos(C)=c<sup>2</sup></em></p>
+		<p class="subparagraph">The four formulas are, in order, Euler's identity, Euler's Characteristic Formula, Pythagoream Theorem, and Cosine Law.</p>
+		<script src="script.js"></script>
+	</body>
+</html>
