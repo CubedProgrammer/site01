@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>file_row_generator.html</title>
+		<link rel="stylesheet" href="file_row_generator.css">
+	</head>
+	<body>
+		<p>Generates a table entry to be added to the file table in index.html file.</p>
+		<div class="input">
+			<input id="name" type="text">
+			<select name="entrytype" id="type">
+				<option>REGULAR FILE</option>
+				<option>VIRTUAL FILE</option>
+				<option>DIRECTORY</option>
+				<option>SYMBOLIC LINK</option>
+			</select>
+		</div>
+		<div class="input">
+			<button id="generate">Generate</button>
+		</div>
+		<p id="output"></p>
+		<script src="file_row_generator.js"></script>
+	</body>
+</html>

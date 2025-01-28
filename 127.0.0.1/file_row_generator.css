@@ -1,0 +1,42 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #000040;
+	color: #E0E000;
+}
+button
+{
+	background-color: #004000;
+	color: #E000E0;
+	border: 8px outset #004000;
+	font-family: monospace;
+	font-size: 32px;
+	margin: auto;
+}
+button:active
+{
+	border: 8px inset #004000;
+}
+select
+{
+	background-color: #004000;
+	color: #C000C0;
+	border: none;
+	font-family: monospace;
+	font-size: 32px;
+}
+input
+{
+	background-color: #004000;
+	color: #C000C0;
+	border: #000000 1px solid;
+	font-family: monospace;
+	font-size: 32px;
+}
+.input
+{
+	margin-top: 16px;
+	margin-bottom: 16px;
+	text-align: center;
+}
