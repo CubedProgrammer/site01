@@ -5,6 +5,10 @@ body
 	background-color: #000020;
 	color: #E0E0E0;
 }
+a
+{
+	color: #00C000;
+}
 td
 {
 	border: none;
