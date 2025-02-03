@@ -16,4 +16,12 @@ function gen(e)
 	r.append(typecell)
 	output.append(r.outerHTML)
 }
+function keys(e)
+{
+	if(e.keyCode === 13)
+	{
+		gen(e)
+	}
+}
 button.addEventListener('click', gen)
+document.addEventListener('keyup', keys)

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>dummy</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<p class="title">Dummy Node</p>
+		<p class="subtitle">Dummy Nodes: The Better Way to Implement Linked Data Structures</p>
+		<p class="paragraph">
+			We have all implemented linked data structures, where objects called nodes contain pointers to other nodes.
+			Then, we would have the main container that points to a node or two in the entire structure, and we use those to access the entire rest of the structure.
+			Each node would also store some piece of information that we call an element, and the structure stores the elements in a useful way.
+			This is how most people are taught linked data structures like linked lists and binary trees.
+			However, I would like to propose an alternate method different from the traditional textbook implementation of linked lists and binary trees, using a dummy node.
+		</p>
+		<p class="paragraph">
+			The dummy node will be a node similar to all other nodes, except it only stores the pointers to other nodes, no data.
+			We will see how to implement a doubly linked list using a dummy node, this idea easily transfers to other data structures.
+		</p>
+		<p class="paragraph">
+			In a doubly linked list, each node has a pointer to the previous and next nodes, and so will the dummy node.
+			The main container normally contains a pointer to the head and tail, instead, the dummy node will contain the head and tail.
+			Specifically, the next pointer of the dummy node shall point to the head, and the previous pointer shall point to the tail.
+			The head and tail node will no longer point to <span class="code">null</span> and will instead point to our dummy node.
+			This makes the linked list circular, and will provide many benefits.
+		</p>
+		<p class="paragraph">
+			One of the benefits is implementation simplicity, null checks can be safely eliminated.
+		</p>
+		<pre class="code">void insert_after(node*target, node*new)
+{
+	new-&#x3enext = target-&#x3enext;
+	new-&#x3eprev = target;
+	target-&#x3enext = new;
+}</pre>
+		<pre class="code">void remove(node*target)
+{
+	// sanity check more empty list has been omitted
+	target-&#x3enext-&#x3eprev = target-&#x3eprev;
+	target-&#x3eprev-&#x3enext = target-&#x3enext;
+}</pre>
+		<p class="paragraph">
+			Another benefit is that in bidirectional reversal, you can reverse a finished iterator.
+			If the head and tail point to null, there is no going back, all you have is a null pointer.
+			However, by using a dummy node, the dummy node now represents a finished iterator, and iteration can reverse or even start again.
+		</p>
+		<p class="paragraph">
+			Dummy node technique can be applied to other data structures, for singly linked lists, it would again be circular.
+			Binary trees are a bit more complex, all child pointers to null shall point to the dummy node instead, and parent of the root node shall be the dummy node.
+			The left child of the dummy node shall be the rightmost node, and the right child of the dummy node shall be the leftmost node.
+			As there is one pointer left, the parent pointer of the dummy node now must point to the root, there must be a way to access the root.
+			This ensures inorder traversal works, and after an iterator reaches the end, it can be reversed and restarted.
+		</p>
+	</body>
+</html>
