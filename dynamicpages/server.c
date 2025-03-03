@@ -35,7 +35,7 @@ void handle(struct eventqueue*eq, int c)
 	puts(cbuf);
 	if(start != NULL)
 	{
-		char fail = 0;
+		char fail = 1;
 		++start;
 		if(memcmp(start, "timeout", 7) == 0)
 		{

@@ -1,0 +1,47 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #202020;
+	color: #E0E0E0;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+	margin: 16px;
+}
+.centered
+{
+	text-align: center;
+}
+a
+{
+	color: #8080FF;
+}
+a:visited
+{
+	color: #C080FF;
+}
+#files
+{
+	text-align: center;
+	margin: auto;
+}
+#files td
+{
+	width: 256px;
+	border: 0px;
+}
+#files a
+{
+	color: #E0E0E0;
+}
+#files td:hover
+{
+	background-color: #404040;
+}
+#files td:hover a
+{
+	color: #FFFFFF;
+}
