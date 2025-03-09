@@ -1,4 +1,7 @@
+#include<arpa/inet.h>
+#include<stdint.h>
 #include<stdio.h>
+#include<stdlib.h>
 #include<sys/select.h>
 #include<sys/socket.h>
 #include<sys/un.h>
@@ -22,34 +25,35 @@ int makesock(struct sockaddr_un*addr)
 }
 void handle(struct eventqueue*eq, int c)
 {
-	char cbuf[2601];
-	size_t bufsz = sizeof(cbuf);
-	size_t bc = read(c, cbuf, bufsz), last = 0;
-	char ended = memchr(cbuf, 0, bc) != NULL;
-	for(; bc < bufsz && !ended; ended = memchr(cbuf + last, 0, bc - last) != NULL)
+	uint32_t len;
+	char fail = 1;
+	size_t bc = read(c, &len, sizeof(len));
+	if(bc == 4)
 	{
-		last = bc;
-		bc += read(c, cbuf + bc, bufsz - bc);
-	}
-	char*start = memchr(cbuf, '/', bc);
-	puts(cbuf);
-	if(start != NULL)
-	{
-		char fail = 1;
-		++start;
-		if(memcmp(start, "timeout", 7) == 0)
+		len = ntohl(len);
+		void*data = malloc(len);
+		len = read(c, data, len);
+		char*start = strchr(data, '/');
+		puts(data);
+		if(start != NULL)
 		{
-			if(start[7] == '\0' || start[7] == '/')
+			++start;
+			if(memcmp(start, "timeout", 7) == 0)
 			{
-				fail = timeout(eq, c, start + 7);
+				if(start[7] == '\0' || start[7] == '/')
+				{
+					fail = timeout(data, eq, c, start + 7);
+				}
 			}
 		}
-		if(fail)
-		{
-			char ch = 'A';
-			write(c, &ch, sizeof(ch));
-			close(c);
-		}
+	}
+	if(fail)
+	{
+		char ch = 'A';
+		uint32_t zero = 0;
+		write(c, &ch, sizeof(ch));
+		write(c, &zero, sizeof(zero));
+		close(c);
 	}
 }
 int main(int argl, char**argv)
@@ -81,7 +85,7 @@ int main(int argl, char**argv)
 			FD_ZERO(&fds);
 			FD_SET(server, &fds);
 			FD_SET(STDIN_FILENO, &fds);
-			ready = select(server + 1, &fds, NULL, NULL, &timeout);
+			ready = select(server + 1, &fds, NULL, NULL, &cpy);
 		}
 		destroyQueue(evtq.head, NULL);
 		getchar();

@@ -1,3 +1,5 @@
+#include<arpa/inet.h>
+#include<stdint.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -17,7 +19,7 @@ void timeoutCallback(void*arg)
 	close(d->client);
 	free(arg);
 }
-int timeout(struct eventqueue*q, int c, const char*sarg)
+int timeout(void*dat, struct eventqueue*q, int c, const char*sarg)
 {
 	int failed = 0;
 	char*remaining;
@@ -29,14 +31,24 @@ int timeout(struct eventqueue*q, int c, const char*sarg)
 		failed = info == NULL;
 		if(!failed)
 		{
-			info->buf = malloc(remaining - sarg);
+			size_t sz = sizeof(uint32_t);
+			union
+			{
+				uint32_t len;
+				char bytes[4];
+			}dummy;
+			dummy.len = remaining - sarg - 1;
+			dummy.len = htons(dummy.len);
+			info->buf = malloc(remaining - sarg + sz);
 			if(info->buf != NULL)
 			{
 				time_t curr = time(NULL);
 				info->client = c;
 				info->size = remaining - sarg;
 				((char*)info->buf)[0] = 'F';
-				memcpy(info->buf + 1, sarg + 1, remaining - sarg - 1);
+				memcpy(info->buf + 1, dummy.bytes, sz);
+				memcpy(info->buf + 5, sarg + 1, remaining - sarg - 1);
+				free(dat);
 				failed = addEvent(q, curr + cnt, timeoutCallback, info);
 				if(failed)
 				{
