@@ -32,7 +32,11 @@ void handle(struct eventqueue*eq, int c)
 	{
 		len = ntohl(len);
 		void*data = malloc(len);
-		len = read(c, data, len);
+		size_t totbc = read(c, data, len);
+		for(size_t bc = totbc; bc > 0 && totbc < len; totbc += bc = read(c, data + totbc, len - totbc))
+		{
+			printf("%u %zu %zu\n", len, bc, totbc);
+		}
 		char*start = strchr(data, '/');
 		puts(data);
 		if(start != NULL)
@@ -44,6 +48,12 @@ void handle(struct eventqueue*eq, int c)
 				{
 					fail = timeout(data, eq, c, start + 7);
 				}
+			}
+			else if(memcmp(start, "redirect", 8) == 0)
+			{
+				fwrite(data, 1, len, stdout);
+				printf("len is %u\n", len);
+				free(data);
 			}
 		}
 	}
@@ -66,6 +76,7 @@ int main(int argl, char**argv)
 	int server = makesock(&addr), client;
 	timeout.tv_usec = 250000;
 	timeout.tv_sec = 0;
+	puts("01");
 	if(server > 0)
 	{
 		int ready = 0;

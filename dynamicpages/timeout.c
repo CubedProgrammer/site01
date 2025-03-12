@@ -38,13 +38,13 @@ int timeout(void*dat, struct eventqueue*q, int c, const char*sarg)
 				char bytes[4];
 			}dummy;
 			dummy.len = remaining - sarg - 1;
-			dummy.len = htons(dummy.len);
+			dummy.len = htonl(dummy.len);
 			info->buf = malloc(remaining - sarg + sz);
 			if(info->buf != NULL)
 			{
 				time_t curr = time(NULL);
 				info->client = c;
-				info->size = remaining - sarg;
+				info->size = remaining - sarg + sz;
 				((char*)info->buf)[0] = 'F';
 				memcpy(info->buf + 1, dummy.bytes, sz);
 				memcpy(info->buf + 5, sarg + 1, remaining - sarg - 1);

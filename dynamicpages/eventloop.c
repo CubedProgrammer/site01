@@ -19,20 +19,27 @@ int addEvent(struct eventqueue*q, time_t timestamp, void(*func)(void*), void*arg
 }
 void applyEvents(struct eventqueue*q)
 {
-	time_t curr = 0;
-	struct queuenode*node = q->head;
-	struct queuenode*next = NULL;
-	for(; node != NULL && time(NULL) >= node->timestamp; node = node->next)
+	struct queuenode**node = &q->head;
+	for(struct queuenode**next = node; *node != NULL ; node = next)
 	{
-		time(&curr);
-		next = node->next;
-		node->func(node->arg);
-	}
-	destroyQueue(q->head, node);
-	q->head = node;
-	if(q->head == NULL)
-	{
-		q->tail = NULL;
+		if(time(NULL) >= (*node)->timestamp)
+		{
+			if((*node)->next != NULL)
+			{
+				(*node)->next->prev = (*node)->prev;
+			}
+			else
+			{
+				q->tail = (*node)->prev;
+			}
+			(*node)->func((*node)->arg);
+			(*node) = (*node)->next;
+			free(*node);
+		}
+		else
+		{
+			next = &(*node)->next;
+		}
 	}
 }
 void destroyQueue(struct queuenode*from, struct queuenode*to)
