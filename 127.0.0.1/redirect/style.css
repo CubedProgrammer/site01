@@ -1,0 +1,17 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #200000;
+	color: #E0FFFF;
+}
+input
+{
+	font-family: inherit;
+	font-size: inherit;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
