@@ -38,12 +38,29 @@ uint64_t randthree(time_t t, uint64_t target)
 {
 	t *= 25214903917;
 	t += 11;
-	uint64_t a = target == 511 ? t % 255 + 1 : t & 0xff;
+	uint64_t a = t % 255 + target + 2;
+	a &= 0xff;
 	uint64_t b = t >> 8;
-	b %= 511 - target + a;
-	b += target - a - 255;
-	b &= 0xff;
-	return((target - (a + b)) & 0xff) << 16 | b << 8 | a;
+	if(target > 255 + a)
+	{
+		b %= 511 - target + a;
+		b += target - a - 255;
+	}
+	else if(target > a)
+	{
+		b %= target - a + 1;
+	}
+	else if(target == a)
+	{
+		b = 0;
+	}
+	else
+	{
+		b %= a - target - 1;
+		b += target + 257 - a;
+	}
+	uint64_t c = target >= a + b ? target - (a + b) : target + 512 - (a + b);
+	return(c & 0xff) << 16 | b << 8 | a;
 }
 int redirect(void*data, size_t len, int c, char*start)
 {
