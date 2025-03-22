@@ -23,6 +23,10 @@ a:visited
 {
 	color: #C080FF;
 }
+#pagelist
+{
+	display: none;
+}
 #files
 {
 	text-align: center;

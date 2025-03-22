@@ -1,0 +1,93 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #002000;
+	color: #E000E0;
+}
+button
+{
+	font: inherit;
+	background-color: #200020;
+	color: #00E000;
+	border: #200020 outset 8px;
+}
+button:hover,button:focus
+{
+	background-color: #400040;
+	color: #00C000;
+	border: #400040 outset 8px;
+}
+button:active
+{
+	border: #400040 inset 8px;
+}
+input
+{
+	font-family: inherit;
+	font-size: inherit;
+	background-color: #200020;
+	color: #00E000;
+	border: none;
+	width: 256px;
+}
+input:focus
+{
+	outline: #E000E0 2px solid;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+#mainpart
+{
+	text-align: center;
+	margin: auto;
+	width: fit-content;
+}
+#inputdiv
+{
+	margin-bottom: 32px;
+}
+#tablediv
+{
+	text-align: center;
+	margin: auto;
+	width: fit-content;
+	& #hdisplay
+	{
+		background-color: #004000;
+		width: fit-content;
+		margin: auto;
+	}
+	& #historytable
+	{
+		margin: auto;
+		border-spacing: 0;
+		border: 1px solid #FFFFFF;
+		color: #FFFFFF;
+		display: none;
+		& tr
+		{
+			background-color: #000000;
+			&:hover
+			{
+				background-color: #202020;
+			}
+		}
+		& td
+		{
+			border: 1px solid #FFFFFF;
+			width: 512px;
+		}
+	}
+	&:hover
+	{
+		background-color: #004000;
+		& #historytable
+		{
+			display: block;
+		}
+	}
+}

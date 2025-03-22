@@ -5,10 +5,38 @@ body
 	background-color: #200000;
 	color: #E0FFFF;
 }
+form
+{
+	text-align: center;
+}
 input
 {
 	font-family: inherit;
 	font-size: inherit;
+}
+input[type=url]
+{
+	border: none;
+	background-color: #002020;
+	color: #FFFFFF;
+	width: 1024px;
+	&:focus
+	{
+		background-color: #000000;
+		outline: #004040 solid 2px;
+	}
+}
+input[type=submit]
+{
+	border: #002020 outset 4px;
+	background-color: #002020;
+	color: #E00000;
+	&:hover
+	{
+		border: #004040 outset 4px;
+		background-color: #004040;
+		color: #C00000;
+	}
 }
 .title
 {

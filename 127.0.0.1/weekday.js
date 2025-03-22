@@ -10,7 +10,7 @@ act = (e) =>
 	out.innerText = names[d]
 }
 button.addEventListener('click', act)
-document.addEventListener('keyrelease', (e) => {
+document.addEventListener('keyup', (e) => {
 	if(e.keyCode === 13)
 		act(e)
 })
