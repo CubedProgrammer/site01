@@ -7,6 +7,7 @@
 #include<sys/un.h>
 #include<unistd.h>
 #include"eventloop.h"
+#include"redirect.h"
 #include"timeout.h"
 int makesock(struct sockaddr_un*addr)
 {
@@ -51,10 +52,12 @@ void handle(struct eventqueue*eq, int c)
 			}
 			else if(memcmp(start, "redirect", 8) == 0)
 			{
-				fwrite(data, 1, len, stdout);
-				printf("len is %u\n", len);
-				free(data);
+				fail = redirect(data, len, c, start + 8);
 			}
+		}
+		if(fail)
+		{
+			free(data);
 		}
 	}
 	if(fail)
