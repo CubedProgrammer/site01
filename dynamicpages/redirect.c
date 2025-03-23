@@ -133,11 +133,24 @@ int redirect(void*data, size_t len, int c, char*start)
 		for(; links[sum * MAX_LINK_LEN + len2] != '\0' && len2 < MAX_LINK_LEN; ++len2);
 		if(0 < len2)
 		{
-			memcpy(response + len1, links + sum * MAX_LINK_LEN, len2);
-			memcpy(response + len1 + len2, "\r\n\r\n", 4);
-			dummy.i = htonl((uint32_t)(len1 + len2 - 1));
-			memcpy(response + 1, dummy.bytes, sizeof(dummy.bytes));
-			write(c, response, len1 + len2 + 4);
+			if(memcmp(start + 1, "html", slash - start - 1) == 0)
+			{
+				response[0] = 'F';
+				char*tmpstr = malloc(len2 + 1);
+				memcpy(tmpstr, links + sum * MAX_LINK_LEN, len2);
+				tmpstr[len2] = '\0';
+				int outlen = sprintf(response + 5, "<meta http-equiv=\"refresh\"content=\"1;url='%s'\">", tmpstr);
+				write(c, response, outlen + 5);
+				free(tmpstr);
+			}
+			else
+			{
+				memcpy(response + len1, links + sum * MAX_LINK_LEN, len2);
+				memcpy(response + len1 + len2, "\r\n\r\n", 4);
+				dummy.i = htonl((uint32_t)(len1 + len2 - 1));
+				memcpy(response + 1, dummy.bytes, sizeof(dummy.bytes));
+				write(c, response, len1 + len2 + 4);
+			}
 			close(c);
 		}
 		else

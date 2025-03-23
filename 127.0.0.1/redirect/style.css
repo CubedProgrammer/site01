@@ -14,6 +14,19 @@ input
 	font-family: inherit;
 	font-size: inherit;
 }
+form
+{
+	width: fit-content;
+	margin: auto;
+}
+form[action=http]
+{
+	background-color: #400000;
+}
+form[action=html]
+{
+	background-color: #004000;
+}
 input[type=url]
 {
 	border: none;
