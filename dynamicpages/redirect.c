@@ -100,7 +100,7 @@ int redirect(void*data, size_t len, int c, char*start)
 			char meta[5];
 			uint32_t rescnt = sprintf(response, format, start + 1, code);
 			dummy.i = htonl(rescnt);
-			meta[0] = 'F';
+			meta[0] = 'H';
 			memcpy(meta + 1, dummy.bytes, sizeof(rescnt));
 			write(c, meta, sizeof(meta));
 			write(c, response, rescnt);
@@ -135,7 +135,7 @@ int redirect(void*data, size_t len, int c, char*start)
 		{
 			if(memcmp(start + 1, "html", slash - start - 1) == 0)
 			{
-				response[0] = 'F';
+				response[0] = 'H';
 				char*tmpstr = malloc(len2 + 1);
 				memcpy(tmpstr, links + sum * MAX_LINK_LEN, len2);
 				tmpstr[len2] = '\0';

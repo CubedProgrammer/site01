@@ -91,3 +91,8 @@ input:focus
 		}
 	}
 }
+#information
+{
+	width: 75%;
+	margin: auto;
+}

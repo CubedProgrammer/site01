@@ -1,27 +1,29 @@
-plist = document.getElementById('pagelist')
-fbody = document.getElementById('fbody')
+plist = pagelist
+mkelem = (t) => document.createElement(t)
 arr = Array.from(plist.children)
-rc = (arr.length + 3) / 4;
+rc = Math.floor((arr.length + 6) / 8)
 for(let i = 0; i < rc; i++)
 {
-	var r = document.createElement('tr')
+	var r = mkelem('tr')
 	fbody.append(r);
 	for(let j = 0; j < 4; j++)
 	{
-		var m = arr[i*4+j]
-		var c = document.createElement('td')
+		var k = i*4+j
+		var m = arr[k*2]
+		var c = mkelem('td')
 		if(m)
 		{
 			var n = m.innerText
-			var link = document.createElement('a')
+			var d = arr[k*2+1].innerText
+			var link = mkelem('a')
+			var desc = mkelem('div')
+			desc.className = 'description'
+			desc.append(d)
 			link.href = n
 			link.append(n)
 			c.append(link)
+			c.append(desc)
 		}
 		r.append(c)
 	}
-}
-for(var en of elemarr.map(e => e.innerText).entries())
-{
-	var ind = en[0], n = en[1]
 }

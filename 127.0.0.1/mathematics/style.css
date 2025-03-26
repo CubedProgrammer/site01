@@ -15,6 +15,15 @@ body
 {
 	text-align: center;
 }
+.description
+{
+	font-size: 16px;
+	display: none;
+}
+td:hover .description
+{
+	display: block;
+}
 a
 {
 	color: #8080FF;
@@ -30,11 +39,12 @@ a:visited
 #files
 {
 	text-align: center;
+	border-spacing: 0px;
 	margin: auto;
 }
 #files td
 {
-	width: 256px;
+	width: 320px;
 	border: 0px;
 }
 #files a
