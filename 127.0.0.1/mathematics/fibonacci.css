@@ -1,0 +1,59 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #002020;
+	color: #E0E0E0;
+}
+table
+{
+	margin: auto;
+	border: 1px solid #E0E0E0;
+	border-spacing: 0;
+}
+td
+{
+	border: 1px solid #E0E0E0;
+}
+tr:hover
+{
+	background-color: #004040;
+	color: #C0C0C0;
+}
+input[type=checkbox]
+{
+	width: 32px;
+	height: 32px;
+}
+.centered
+{
+	text-align: center;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+.tablediv
+{
+	text-align: center;
+	margin: auto;
+	width: fit-content;
+}
+.hidetable
+{
+	display: none;
+}
+.hidebox:checked~.hidetable
+{
+	display: block;
+	& td
+	{
+		width: 128px;
+	}
+}
+#information
+{
+	width: 75%;
+	margin: auto;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<title>fibonacci.html</title>
+		<link rel="stylesheet" href="fibonacci.css">
+	</head>
+	<body>
+		<p class="title">Fibonacci</p>
+		<div id="information">
+			<p>Fibonacci has one male rabbit and one female rabbit. Rabbits produce one pair of offspring each month, one male and female, and takes one month to grow up.</p>
+			<p>Rabbits will inbreed, Fibonacci starts off with one pair of rabbits, one male and one female.</p>
+			<p>The Fibonacci sequence is the sequence of number of pairs of adult rabbits in each month.</p>
+			<div class="tablediv">
+				<input type="checkbox" id="rabbit" class="hidebox">
+				<table class="hidetable">
+					<thead>
+						<tr>
+							<td>Month</td>
+							<td>Adults</td>
+							<td>Babies</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>5</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>8</td>
+							<td>3</td>
+						</tr>
+					</tbody>
+					<label for="rabbit">Show Table</label>
+				</table>
+			</div>
+			<p>The Fibonacci sequence can be written as a function over the integers, defined recursively.</p>
+			<p class="centered">f(1)=1, f(2)=1, f(n)=f(n-1)+f(n-2)</p>
+			<p>This formula can sequentially generate the next number in the sequence. However, if intermediate values are not desired, there is a much faster way to compute the value at a specific index.</p>
+			<p class="centered">f(a)f(b-1)+f(a+1)f(b)=f(a+b)</p>
+			<p>This allows us to double the index of the sequence every iteration of the formula, by setting a equal to b.</p>
+			<p class="centered">f(a)f(a-1)+f(a+1)f(a)=f(2a)</p>
+			<p>As we can see, the formula requires three smaller values to generate one value, to continuously generate values, Here are formulas to generate values efficiently.</p>
+			<p class="centered">f(a-1)<sup>2</sup>+f(a)<sup>2</sup>=f(2a-1)</p>
+			<p class="centered">2f(a-1)f(a)+f(a)<sup>2</sup>=f(2a)</p>
+			<p class="centered">f(2a-1)+f(2a)=f(2a+1)</p>
+		</div>
+		<div class="tablediv">
+			<table>
+				<tbody id="fbody">
+					<tr><td>1</td><td>1</td></tr>
+					<tr><td>2</td><td>1</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="fibonacci.js"></script>
+	</body>
+</html>
