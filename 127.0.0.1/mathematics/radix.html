@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head>
+		<title>radix.html</title>
+		<link rel="stylesheet" href="radix.css">
+	</head>
+	<body>
+		<p class="title">Radix</p>
+		<div id="information">
+			<p>Humanity discovered position notation for numbers thousands of years ago. Positional notation allowed people to write numbers compactly.</p>
+			<p>Tally marks required as many tallies as the number it represented. Positional notation requires digits proportional to the logarithm of the number.</p>
+			<p>Positional notation requires a radix, the ratio between each value of each position. Most of humanity today uses ten as the radix.</p>
+			<p>The rightmost position represents one, moving to the left, the value of each position multiplied by the radix.</p>
+			<div class="tablediv">
+				<table>
+					<thead>
+						<tr>
+							<td>Ten-Thousands</td>
+							<td>Thousands</td>
+							<td>Hundreds</td>
+							<td>Tens</td>
+							<td>Ones</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>The table above shows the values of each position as well as the number in each position. The number in each position is multiplied by the value of the position, added together to form the number.</p>
+			<p>The number in each position must be lower than the radix, and is at least zero. All positions have a number, but leading zeros are not written explicitly. The positions not shown in the table above have a value of zero.</p>
+			<p>0012 is equal to 12, but 102 is not equal to 12, since in the former the leftmost 1 is in the hundreds place, while in the latter it is in the tenth place.</p>
+			<p>The need to display fractional values exist, and so positions after the ones place were created, to signal where the ones place is, a radix point is used to separate the integral and fractional parts of the number.</p>
+			<p>The radix point is usually a . or , symbol, depending on the culture and language.</p>
+			<div class="tablediv">
+				<table>
+					<thead>
+						<tr>
+							<td>Tens</td>
+							<td>Ones</td>
+							<td>Tenths</td>
+							<td>Hundredths</td>
+							<td>Thousandths</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>The number above is written as 12.345, writing it as 12345 without the radix point would mean the leftmost 1 is in the ten thousands place.</p>
+			<p>For positions after the radix point, trailing zeros can be omitted instead of leading zeros, since they do not affect the positions of the digits to their left.</p>
+			<p>Numbers can be written in different radixes, 12 in radix four would be 6 in radix ten, or 110 in radix two.</p>
+			<div class="tablediv">
+				<table>
+					<thead>
+						<tr>
+							<td>Twos</td>
+							<td>Ones</td>
+							<td>Halves</td>
+							<td>Quarters</td>
+							<td>Eighths</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>The number in the table above is 11.101 in radix two, converted to radix ten, it is 3.625, notice that in radix two, only 0 and 1 are valid digits, as digits must be less than the radix.</p>
+			<p>For a human to convert between numbers written in different radixes, a human must first convert to his/her default radix, ten for most humans. The the number is converted again to the desired radix.</p>
+			<p>To convert from any radix to your default radix, break the number into its interal and fractional parts, this is easily done because that is exactly what the radix point separates.</p>
+			<p>For the integral part, start with the leftmost digit, then go through every digit to its right, multiplying by the radix and then adding the next digit.</p>
+			<p>For the fractional part, start with the rightmost digit, then go through every digit to its left, dividing by the radix and adding the next digit. At the end, divide by the radix again.</p>
+			<p>For instance, converting 103.022 from radix four to radix ten, split into the integral part, 103, and the fractional part, 022 and convert each part separately.</p>
+			<p>For 103, start with 1, for the next digit, 0, multiply by the radix 4, 1*4=4, then add 0, 4+0=0. We do the same for the next digit, 4*4=16, 16+3=19, the integer part is 19. There are no more digits and thus we are done.</p>
+			<p>For 022, start with 2, for the next digit, 2, divide by the radix 4, 2/4=0.5, then add 2, 0.5+2=2.5. We do the same for the next digit, 2.5/4=0.625, 0.625+0=0.625. At the end, divide again, 0.625/4=0.15625.</p>
+			<p>Combine the two, we have 19.15625 as our number in radix ten.</p>
+			<p>To convert from your default radix to any radix, again break up the number into its integral and fractional parts and convert separately.</p>
+			<p>For the integral part, divide by the radix and round down, write down the remainder, repeat until you are at zero, and write all your remainders in reverse order.</p>
+			<p>For the fractional part, divide by the multiplicative inverse of the radix and round down, write down the quotient, then multiply by the radix, repeat until you are at zero. Write all quotients in order.</p>
+			<p>For instance, converting 19.15625 from radix ten to radix four, break into 19 and 0.15625. 19/4=4 remainder 3, 4/4=1 remainder 0, 1/4=0 remainder 1, the remainders are 3, 0, 1, or 103 written in reverse.</p>
+			<p>The inverse of 4 is 0.25, 0.15625/0.25=0 remainder 0.15625, 0.15625*4=0.625, 0.625/0.25=2 remainder 0.125, 0.125*4=0.5, 0.5/0.25=2 remainder 0. Our quotients were 0, 2, and 2, so the fractional part is 0.022.</p>
+			<p>The integral part requires you to keep the quotient for the next step, and write the remainders in reverse order. The fractional part requires you to keep the remainder for the next step, and write the quotients in order.</p>
+			<p>The fractional part may never reach a remainder of zero and thus the process may be unending, for example, converting 0.8 from radix ten into radix two. In such cases you may highlight the repeating pattern, or simply choose a cutoff.</p>
+		</div>
+		<div id="converterdiv">
+			<div class="inputdiv">
+				<div class="labeldiv">
+					<label for="inumber">Number</label>
+				</div>
+				<input id="inumber" type="text">
+			</div>
+			<div class="inputdiv">
+				<div class="labeldiv">
+					<label for="fr">From</label>
+				</div>
+				<input id="fr" value="12" type="text">
+			</div>
+			<div class="inputdiv">
+				<div class="labeldiv">
+					<label for="to">To</label>
+				</div>
+				<input id="to" value="16" type="text">
+			</div>
+			<button id="convert">Convert</button>
+			<p id="result">return</p>
+		</div>
+		<div>
+			<table>
+				<tbody id="fbody"></tbody>
+			</table>
+		</div>
+		<script src="radix.js"></script>
+	</body>
+</html>

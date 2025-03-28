@@ -61,10 +61,11 @@
 			<p class="centered">f(a)f(b-1)+f(a+1)f(b)=f(a+b)</p>
 			<p>This allows us to double the index of the sequence every iteration of the formula, by setting a equal to b.</p>
 			<p class="centered">f(a)f(a-1)+f(a+1)f(a)=f(2a)</p>
-			<p>As we can see, the formula requires three smaller values to generate one value, to continuously generate values, Here are formulas to generate values efficiently.</p>
+			<p>As we can see, the formula requires three smaller values to generate one value, to continuously generate values. Here are formulas to generate values efficiently.</p>
 			<p class="centered">f(a-1)<sup>2</sup>+f(a)<sup>2</sup>=f(2a-1)</p>
 			<p class="centered">2f(a-1)f(a)+f(a)<sup>2</sup>=f(2a)</p>
-			<p class="centered">f(2a-1)+f(2a)=f(2a+1)</p>
+			<p>We skipped the third value because it is not actually necessary. We only need two values.</p>
+			<p>For when a is not a power of two, resort back to the original formula.</p>
 		</div>
 		<div class="tablediv">
 			<table>

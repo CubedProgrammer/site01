@@ -1,0 +1,86 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #202000;
+	color: #E0E0E0;
+}
+input
+{
+	font: inherit;
+	background-color: #000000;
+	color: #FFFFFF;
+	outline: none;
+	border: none;
+}
+input[type=text]:focus
+{
+	outline: 1px solid #FFFFFF;
+}
+button
+{
+	border: 4px outset #200020;
+	background-color: #200020;
+	color: #E0E0E0;
+	font: inherit;
+	&:hover
+	{
+		border: 4px outset #400000;
+		background-color: #400040;
+		color: #C0C0C0;
+	}
+	&:active
+	{
+		border: 4px inset #400040;
+	}
+}
+table
+{
+	margin: auto;
+	border: 1px solid #E0E0E0;
+	border-spacing: 0;
+}
+td
+{
+	border: 1px solid #E0E0E0;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+.tablediv
+{
+	text-align: center;
+	margin: auto;
+	width: fit-content;
+	& td
+	{
+		width: 256px;
+		&:hover
+		{
+			background-color: #404000;
+			color: #C0C0C0;
+		}
+	}
+}
+.inputdiv
+{
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+#converterdiv
+{
+	margin: 16px auto;
+	width: fit-content;
+	text-align: center;
+}
+#information
+{
+	width: 75%;
+	margin: auto;
+}
+#fbody
+{
+	text-align: right;
+}
