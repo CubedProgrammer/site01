@@ -19,19 +19,19 @@ input[type=text]:focus
 }
 button
 {
-	border: 4px outset #200020;
-	background-color: #200020;
+	border: 4px outset #000020;
+	background-color: #000020;
 	color: #E0E0E0;
 	font: inherit;
 	&:hover
 	{
-		border: 4px outset #400000;
-		background-color: #400040;
+		border: 4px outset #000040;
+		background-color: #000040;
 		color: #C0C0C0;
 	}
 	&:active
 	{
-		border: 4px inset #400040;
+		border: 4px inset #000040;
 	}
 }
 table

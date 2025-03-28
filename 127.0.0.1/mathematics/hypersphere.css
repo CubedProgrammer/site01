@@ -1,0 +1,50 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #200020;
+	color: #E0E0E0;
+}
+table
+{
+	margin: auto;
+	border: 1px solid #E0E0E0;
+	border-spacing: 0;
+}
+td
+{
+	border: 1px solid #E0E0E0;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+.centered
+{
+	text-align: center;
+}
+.tablediv
+{
+	text-align: center;
+	margin: auto;
+	width: fit-content;
+	& tr:hover
+	{
+		background-color: #400040;
+		color: #C0C0C0;
+	}
+	& td
+	{
+		width: 192px;
+		&.bigcolumn
+		{
+			width: 384px;
+		}
+	}
+}
+#information
+{
+	width: 75%;
+	margin: auto;
+}

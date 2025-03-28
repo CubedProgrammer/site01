@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>hypersphere.html</title>
+		<link rel="stylesheet" href="hypersphere.css">
+	</head>
+	<body>
+		<p class="title">Hypersphere</p>
+		<div id="information">
+			<p>Spheres can be generalized to higher dimensions, defined as the shape that has the lowest surface area to volume ratio. The hyper volume of a sphere in higher dimensions is given by this formula.</p>
+			<p class="centered">r<sup>a</sup>&#x3C0<sup>a/2</sup>/&#x393(a/2+1)</p>
+			<p>Where a is the dimension and r is the radius.</p>
+			<p>This page is not interested in the volume though, we are interested in packing hyperspheres inside hypercubes.</p>
+			<p>Starting with the square and the circle, imagine a square of length 4. Put 4 circles of radius 1 in each corner. There is some room left in the middle, let us put another circle there so it touches the four circles.</p>
+			<p>What is the radius of the inner circle?</p>
+			<p>Imagine a cube of length 4, put 8 spheres of radius 1 in each corner, squeeze in the inner sphere again. This time, what is its radius? Greater than the inner circle in two dimensions?</p>
+			<p>Imagine a hypercube of length 4, put 16 hypersphers of radius 1 in each corner, and put in the inner hypersphere as usual. What is the radius of the inner hypersphere?</p>
+			<p>The radius will always be the distance from the center of a corner hypersphere to the center of the cube, minus 1 for the corner hypersphers of radius 1. The distance to the center of the cube is the square root of the dimension.</p>
+			<p>The radius of the inner hypersphere grows as the number of dimensions increase, at 4 dimensions, it is already the same size as the corner hyperspheres. Let us see what happens in even higher dimensions.</p>
+			<div class="tablediv">
+				<table>
+					<thead>
+						<tr>
+							<td>Dimension</td>
+							<td class="bigcolumn">Radius</td>
+						</tr>
+					</thead>
+					<tbody id="radii"></tbody>
+				</table>
+			</div>
+			<p>The radius of the inner hypersphere in 10 dimensions is most interesting, with a radius greater than 2, this means the inner hypersphere goes outside of the cube of length 4 that bounds the corner hyperspheres.</p>
+			<p>We cannot imagine it in three dimensions, but in such high dimensions the corner of a hypercube is so far away from its center that this can happen.</p>
+		</div>
+		<script src="hypersphere.js"></script>
+	</body>
+</html>
