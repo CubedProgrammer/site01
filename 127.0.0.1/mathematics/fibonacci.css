@@ -44,6 +44,26 @@ input[type=checkbox]
 {
 	display: none;
 }
+.hidebox
+{
+	display: none;
+}
+.hidebox~#closedmenu
+{
+	display: inline;
+}
+.hidebox:checked~#closedmenu
+{
+	display: none;
+}
+.hidebox~#openmenu
+{
+	display: none;
+}
+.hidebox:checked~#openmenu
+{
+	display: inline;
+}
 .hidebox:checked~.hidetable
 {
 	display: block;
