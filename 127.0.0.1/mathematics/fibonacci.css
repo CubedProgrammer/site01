@@ -48,19 +48,19 @@ input[type=checkbox]
 {
 	display: none;
 }
-.hidebox~#closedmenu
+.hidebox~label #closedmenu
 {
 	display: inline;
 }
-.hidebox:checked~#closedmenu
+.hidebox:checked~label #closedmenu
 {
 	display: none;
 }
-.hidebox~#openmenu
+.hidebox~label #openmenu
 {
 	display: none;
 }
-.hidebox:checked~#openmenu
+.hidebox:checked~label #openmenu
 {
 	display: inline;
 }
