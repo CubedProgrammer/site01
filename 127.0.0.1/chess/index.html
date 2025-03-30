@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chess</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<p class="title">Chess</p>
+		<div id="refreshlink">
+			<a href="index.html">Refresh</a>
+		</div>
+		<table id="filetable">
+			<tbody id="filebody"></tbody>
+		</table>
+		<p>Chess was invented circa 600 AD in India, back then, chess was a very different game from today. The pieces were the same but they had much less mobility than they do today.</p>
+		<p>According to legend, the inventer invented the game for the king to play, and the king was so impressed by the game that he decided to reward the inventor.</p>
+		<p>When asked what he wanted as a reward, the man simply requested for one grain of rice on the first square of the board, two grains on the second, and for each subsequent square, there would be twice as many grains of rice as the last.</p>
+		<p>The king was impressed that the man was not greedy, and proceeded to attempt to give him his desired reward. However, there was an issue, and the man had, in fact, asked for far too much.</p>
+		<p>How many grains of rice did he ask for in total?</p>
+		<div id="solution">
+			<p id="hoverSolution">Hover to See Solution</p>
+			<div id="hiddenSolution">
+				<p>There are 64 squares on the board, the first square has 2<sup>0</sup> grains of rice, the last has 2<sup>64</sup> grains of rice.</p>
+				<p>The sum of the powers of 2 from 0 to 63 is 2<sup>64</sup>-1=18446744073709551615, a number so astronomically huge that the inventor cannot possibly have been serious when making the request.</p>
+			</div>
+		</div>
+		<p>The values of chess pieces are shown below, Fischer believed that the bishop outweighs the knight and valued it slightly higher. Today, computers have demonstrated that Fischer was correct in his assessment.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Pawn</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>Knight</td>
+					<td>3</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>Bishop</td>
+					<td>3</td>
+					<td>3.25</td>
+				</tr>
+				<tr>
+					<td>Rook</td>
+					<td>5</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>Queen</td>
+					<td>9</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>King</td>
+					<td>Infinity</td>
+					<td>Infinity</td>
+				</tr>
+			</tbody>
+		</table>
+		<script src="script.js"></script>
+	</body>
+</html>
