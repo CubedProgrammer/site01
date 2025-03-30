@@ -17,7 +17,7 @@ const maketable = (t) =>
 			link.append(values[0])
 			lcell.append(link)
 			dcell.append(values[1])
-			tr.append(lcell, dcell)
+			tr.append(lcell, mkelem('td'), dcell)
 			filebody.append(tr)
 		}
 	}
@@ -30,4 +30,4 @@ req.onload = () =>
 		maketable(req.responseText)
 	}
 }
-req.send(null)
+req.send()

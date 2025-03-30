@@ -34,6 +34,10 @@ td
 		}
 	}
 }
+.centered
+{
+	text-align: center;
+}
 #refreshlink
 {
 	background-color: #700000;
@@ -56,6 +60,7 @@ td
 	margin: 32px auto;
 	& td
 	{
+		min-width: 64px;
 		border: none;
 	}
 }
@@ -76,10 +81,6 @@ td
 			display: block;
 		}
 	}
-}
-#hoverSolution
-{
-	text-align: center;
 }
 #hiddenSolution
 {

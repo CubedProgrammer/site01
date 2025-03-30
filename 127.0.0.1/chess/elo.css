@@ -1,0 +1,44 @@
+@import url("style.css");
+#calcdiv
+{
+	width: 50%;
+	margin: auto;
+}
+#buttondiv
+{
+	width: fit-content;
+	margin: auto;
+}
+.inputdiv
+{
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+input
+{
+	color: inherit;
+	font: inherit;
+	background-color: #200000;
+	border: none;
+	outline: none;
+	&:focus
+	{
+		outline: 1px solid #E0E000;
+	}
+}
+button
+{
+	font: inherit;
+	color: inherit;
+	background-color: #200000;
+	border: 8px outset #200000;
+	&:hover
+	{
+		background-color: #400000;
+		border: 8px outset #400000;
+	}
+	&:active
+	{
+		border: 8px inset #400000;
+	}
+}

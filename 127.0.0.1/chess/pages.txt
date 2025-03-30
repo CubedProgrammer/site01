@@ -1,3 +1,1 @@
-t,u,v
-gay,lesbian
-faggot,nigger
+elo.html,The Elo rating system
