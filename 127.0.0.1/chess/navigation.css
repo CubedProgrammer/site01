@@ -1,0 +1,37 @@
+@import url("style.css");
+#navigationHoverMenu
+{
+	display: flex;
+	margin: auto;
+	width: 75%;
+	text-align: center;
+	& a
+	{
+		color: inherit;
+	}
+	& div
+	{
+		height: fit-content;
+		border-bottom: 8px solid #202000;
+		&:hover>.deeper
+		{
+			display: block;
+		}
+	}
+	&>div
+	{
+		flex: 1;
+		&:hover
+		{
+			background-color: #404000;
+		}
+	}
+	& .top
+	{
+		background-color: #202000;
+	}
+	& .deeper
+	{
+		display: none;
+	}
+}
