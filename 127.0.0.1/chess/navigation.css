@@ -29,9 +29,94 @@
 	& .top
 	{
 		background-color: #202000;
+		display: block;
 	}
 	& .deeper
 	{
 		display: none;
+	}
+}
+#navigationToggleMenu
+{
+	width: 50%;
+	margin: auto;
+	& input
+	{
+		width: 32px;
+		height: 32px;
+		flex: 1;
+		display: none;
+		&~.plus
+		{
+			display: block;
+		}
+		&:checked~.plus
+		{
+			display: none;
+		}
+		&~.minus
+		{
+			display: none;
+		}
+		&:checked~.minus
+		{
+			display: block;
+		}
+		&:checked~.deeper
+		{
+			display: block;
+		}
+		&:checked~.top>label
+		{
+			display: grid
+		}
+	}
+	& p
+	{
+		margin: 0px;
+		grid-row-start: 1;
+	}
+	& a
+	{
+		color: inherit;
+	}
+	& .top
+	{
+		width: fit-content;
+	}
+	& label
+	{
+		height: fit-content;
+		&>.linkParent
+		{
+			grid-row-start: 1;
+		}
+		& div
+		{
+			grid-row-start: auto;
+			grid-column-start: 2;
+		}
+		&:hover
+		{
+			&>p
+			{
+				background-color: #000040;
+			}
+			&>.linkParent
+			{
+				background-color: #000040;
+			}
+		}
+	}
+	& .deeper,label
+	{
+		display: none;
+	}
+	&>.top
+	{
+		&>label
+		{
+			display: grid;
+		}
 	}
 }
