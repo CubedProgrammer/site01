@@ -15,5 +15,10 @@ int address(int c, uint32_t a)
 	dummy.i = htonl(cnt);
 	cbuf[0] = 'F';
 	memcpy(cbuf + 1, dummy.b, sizeof(uint32_t));
-	return write(c, cbuf, cnt + 1 + sizeof(uint32_t)) <= 0;
+	int failed = write(c, cbuf, cnt + 1 + sizeof(uint32_t)) <= 0;
+	if(!failed)
+	{
+		close(c);
+	}
+	return failed;
 }
