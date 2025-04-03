@@ -6,6 +6,7 @@
 #include<sys/socket.h>
 #include<sys/un.h>
 #include<unistd.h>
+#include"address.h"
 #include"eventloop.h"
 #include"redirect.h"
 #include"timeout.h"
@@ -26,12 +27,14 @@ int makesock(struct sockaddr_un*addr)
 }
 void handle(struct eventqueue*eq, int c)
 {
-	uint32_t len;
+	uint32_t len, addr;
 	char fail = 1;
-	size_t bc = read(c, &len, sizeof(len));
-	if(bc == 4)
+	size_t bc = read(c, &addr, sizeof(addr));
+	bc += read(c, &len, sizeof(len));
+	if(bc == 8)
 	{
 		len = ntohl(len);
+		addr = ntohl(addr);
 		void*data = malloc(len);
 		size_t totbc = read(c, data, len);
 		for(size_t bc = totbc; bc > 0 && totbc < len; totbc += bc = read(c, data + totbc, len - totbc))
@@ -39,7 +42,7 @@ void handle(struct eventqueue*eq, int c)
 			printf("%u %zu %zu\n", len, bc, totbc);
 		}
 		char*start = strchr(data, '/');
-		puts(data);
+		printf("%d.%d.%d.%d %s\n", addr >> 24 & 0xff, addr >> 16 & 0xff, addr >> 8 & 0xff, addr & 0xff, data);
 		if(start != NULL)
 		{
 			++start;
@@ -52,7 +55,17 @@ void handle(struct eventqueue*eq, int c)
 			}
 			else if(memcmp(start, "redirect", 8) == 0)
 			{
-				fail = redirect(data, len, c, start + 8);
+				if(start[8] == '\0' || start[8] == '/')
+				{
+					fail = redirect(data, len, c, start + 8);
+				}
+			}
+			else if(memcmp(start, "address", 7) == 0)
+			{
+				if(start[7] == '\0' || start[7] == '/')
+				{
+					fail = address(c, addr);
+				}
 			}
 		}
 		if(fail)
