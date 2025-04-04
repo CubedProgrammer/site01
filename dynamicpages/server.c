@@ -62,7 +62,7 @@ void handle(struct eventqueue*eq, int c)
 			}
 			else if(memcmp(start, "address", 7) == 0)
 			{
-				if(start[7] == '\0' || start[7] == '/')
+				if(start[7] == '\0' || (start[7] == '/' && start[8] == '\0'))
 				{
 					fail = address(c, addr);
 				}

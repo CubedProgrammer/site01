@@ -127,7 +127,7 @@ int redirect(void*data, size_t len, int c, char*start)
 			sum += longbytes.b[i];
 		}
 		sum &= 0x1ff;
-		char response[576] = "R	HTTP/1.1 308 Permanent Redirect\r\nlocation: ";
+		char response[576] = "R    HTTP/1.1 308 Permanent Redirect\r\nlocation: ";
 		size_t len1 = strlen(response);
 		size_t len2 = 0;
 		for(; links[sum * MAX_LINK_LEN + len2] != '\0' && len2 < MAX_LINK_LEN; ++len2);

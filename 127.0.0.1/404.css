@@ -1,0 +1,39 @@
+body
+{
+	background-color: #202020;
+	color: #E0E0E0;
+	font-size: 32px;
+	font-family: monospace;
+	text-align: center;
+}
+#stuff
+{
+	background: linear-gradient(#202020, #404040, #404040, #202020);
+}
+input
+{
+	border: none;
+	background-color: #000000;
+	color: inherit;
+	font: inherit;
+	&:focus
+	{
+		outline: 1px solid #FFFFFF;
+	}
+}
+button
+{
+	background-color: #400040;
+	color: inherit;
+	border: 8px outset #400040;
+	font: inherit;
+	&:hover
+	{
+		background-color: #800080;
+		border: 8px outset #800080;
+	}
+	&:active
+	{
+		border: 8px inset #800080;
+	}
+}

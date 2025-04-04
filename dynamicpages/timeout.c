@@ -31,7 +31,7 @@ int timeout(void*dat, struct eventqueue*q, int c, const char*sarg)
 	}dummy;
 	if(*sarg == '\0')
 	{
-		char message[] = "F	Given a file name, parses it into a number N in base ten, waits N seconds before responding.";
+		char message[] = "F    Given a file name, parses it into a number N in base ten, waits N seconds before responding.";
 		uint32_t len = sizeof(message) - 1;
 		dummy.len = htonl(len);
 		memcpy(message + 1, dummy.bytes, sizeof(uint32_t));
