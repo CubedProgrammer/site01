@@ -45,23 +45,22 @@ const buildHoverMenu = function(files)
 	const callback = function(e, p, d)
 	{
 		const linkdiv = document.createElement('div')
+		const child = document.createElement('div')
 		const link = document.createElement('a')
 		linkdiv.className = 'top'
 		link.href = p + d
 		link.append(p + d)
 		linkdiv.append(link)
+		child.className = 'deeper'
+		e.append(linkdiv, child)
 		if(d.length === 0)
 		{
-			const child = document.createElement('div')
-			child.className = 'deeper'
-			child.append(linkdiv)
-			e.append(child)
 			e = child
 		}
-		else
+		/*else
 		{
 			e.append(linkdiv)
-		}
+		}*/
 		return e
 	}
 	buildMenu(files, navigationHoverMenu, callback)
@@ -129,7 +128,7 @@ const main = async function()
 		pageArray = await getPages()
 		if(pageArray)
 		{
-			//buildHoverMenu(pageArray)
+			buildHoverMenu(pageArray)
 		}
 	}
 	if(navigationToggleMenu)

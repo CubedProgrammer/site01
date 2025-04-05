@@ -1,7 +1,7 @@
 @import url("style.css");
 #navigationHoverMenu
 {
-	display: flex;
+	display: grid;
 	margin: auto;
 	width: 75%;
 	text-align: center;
@@ -12,28 +12,70 @@
 	& div
 	{
 		height: fit-content;
-		border-bottom: 8px solid #202000;
-		&:hover>.deeper
-		{
-			display: block;
-		}
 	}
 	&>div
 	{
 		flex: 1;
-		&:hover
-		{
-			background-color: #404000;
-		}
+		background-color: #202000;
 	}
 	& .top
 	{
-		background-color: #202000;
-		display: block;
+		border-bottom: 8px solid #202000;
+		&:hover
+		{
+			border-bottom: 8px solid #404000;
+			background-color: #404000;
+			&+.deeper
+			{
+				background-color: #202000;
+				&>.top
+				{
+					background-color: #202000;
+					display: block;
+				}
+			}
+		}
 	}
 	& .deeper
 	{
-		display: none;
+		background-color: #000020;
+		display: grid;
+		&>div
+		{
+			display: none;
+		}
+		&>.deeper
+		{
+			left: 100%;
+			top: -52px;
+			height: 0px;
+			position: relative;
+		}
+		&:hover
+		{
+			background-color: #202000;
+			&>.top
+			{
+				background-color: #202000;
+				&:hover
+				{
+					background-color: #404000;
+				}
+			}
+			&>div
+			{
+				display: block;
+			}
+		}
+	}
+	&>.top
+	{
+		grid-row-start: 1;
+	}
+	&>.deeper
+	{
+		grid-row-start: 2;
+		grid-column-start: auto;
 	}
 }
 #navigationToggleMenu
