@@ -23,7 +23,7 @@ const buildMenu = function(files, element, callback)
 		{
 			const ind = path.lastIndexOf('/')
 			path = path.substring(0, ind + (ind === -1 ? 1 : 0))
-			element = element.parentElement.parentElement
+			element = element.parentElement
 		}
 		else
 		{
@@ -68,27 +68,30 @@ const buildHoverMenu = function(files)
 }
 const buildToggleMenu = function(files)
 {
-	const addDirectory = function(parent, name, target)
+	i = 0
+	const addDirectory = function(parent, name, target, index)
 	{
 		const rootDiv = document.createElement('div')
 		const label = document.createElement('label')
 		const checkbox = document.createElement('input')
-		const linkParent = document.createElement('div')
+		const labelParent = document.createElement('div')
 		const link = document.createElement('a')
 		const plus = document.createElement('p')
 		const minus = document.createElement('p')
 		rootDiv.className = 'top'
 		checkbox.type = 'checkbox'
+		checkbox.id = 'togglebox' + index
+		label.htmlFor = checkbox.id
 		plus.className = 'plus'
 		plus.append('+')
 		minus.className = 'minus'
 		minus.append('-')
 		link.href = target
 		link.append(name)
-		linkParent.className = 'linkParent'
-		linkParent.append(link)
-		label.append(checkbox, plus, minus, linkParent)
-		rootDiv.append(label)
+		label.append(plus, minus)
+		labelParent.className = 'labelParent'
+		labelParent.append(label)
+		rootDiv.append(checkbox, labelParent, link)
 		parent.append(rootDiv)
 		return rootDiv
 	}
@@ -97,23 +100,25 @@ const buildToggleMenu = function(files)
 		const target = p + d
 		if(d.length === 0)
 		{
-			const linkdiv = addDirectory(e, target, target)
-			e.firstChild.append(linkdiv)
+			const linkdiv = addDirectory(e, target, target, i++)
+			e.append(linkdiv)
 			return linkdiv
 		}
 		else
 		{
 			const linkdiv = document.createElement('div')
 			const link = document.createElement('a')
+			const space = document.createElement('p')
 			linkdiv.className = 'deeper'
+			space.append('+')
 			link.href = p + d
 			link.append(p + d)
-			linkdiv.append(link)
-			e.firstChild.append(linkdiv)
+			linkdiv.append(space, link)
+			e.append(linkdiv)
 			return e
 		}
 	}
-	const r = addDirectory(navigationToggleMenu, '/', 'index.html')
+	const r = addDirectory(navigationToggleMenu, '/', 'index.html', i++)
 	buildMenu(files, r, callback)
 }
 const main = async function()
