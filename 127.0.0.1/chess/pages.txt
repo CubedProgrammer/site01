@@ -1,1 +1,3 @@
 elo.html,The Elo rating system
+navigation.html,Navigation Menu
+champion,List of World Champions

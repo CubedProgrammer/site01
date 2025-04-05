@@ -1,0 +1,13 @@
+@import url("/chess/style.css");
+thead>tr
+{
+	background-color: #000040;
+}
+td
+{
+	max-width: 576px;
+	&>p
+	{
+		margin: 0;
+	}
+}

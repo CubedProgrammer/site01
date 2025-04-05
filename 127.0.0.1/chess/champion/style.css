@@ -1,0 +1,19 @@
+@import url("/chess/style.css");
+.info
+{
+	width: 75%;
+	margin: auto;
+}
+a
+{
+	color: #FFFF80;
+}
+#images
+{
+	width: fit-content;
+	margin: auto;
+}
+td
+{
+	padding: 8px;
+}

@@ -1,0 +1,28 @@
+@import url("/chess/style.css");
+thead>tr
+{
+	background-color: #400040;
+	&:hover
+	{
+		background-color: #400040;
+	}
+}
+td
+{
+	max-width: 576px;
+	&>p
+	{
+		margin: 0;
+	}
+}
+#championbody
+{
+	&>tr
+	{
+		background-color: #200020;
+		&:hover
+		{
+			background-color: #400040;
+		}
+	}
+}
