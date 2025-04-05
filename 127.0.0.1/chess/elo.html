@@ -3,9 +3,11 @@
 	<head>
 		<title>Elo</title>
 		<link rel="stylesheet" href="elo.css">
+		<link rel="stylesheet" href="navigation.css">
 	</head>
 	<body>
 		<p class="title">Elo</p>
+		<nav id="navigationHoverMenu"></nav>
 		<p>The Elo rating system is named after Arpad Elo, it is a relative rating system where a difference of 400 rating points mean 10 to 1 odds.</p>
 		<p>Here is a calculator for the expected odds of two players given their rating points. The formula is described below. The value computed is the expected number of victories the first player will have for every victory the second has.</p>
 		<div id="calcdiv">
@@ -25,6 +27,9 @@
 		<p>If player A is 400 points higher rated than player B, then player A will suffer one defeat for every ten victories. If 800 points higher, then one defeat for every one hundred victories.</p>
 		<p>The formula for the number of victories player A will have for every defeat against player B is given by the formula below, where a and b are player A and player B's ratings, respectively, and c is the number of expected victories.</p>
 		<p class="centered">c=10<sup>(a-b)/400</sup></p>
+		<p id="navigationEntryFile" class="navigationConfiguration">navigation.txt</p>
+		<p id="navigationBaseDirectory" class="navigationConfiguration"></p>
 		<script src="elo.js"></script>
+		<script src="navigation.js"></script>
 	</body>
 </html>

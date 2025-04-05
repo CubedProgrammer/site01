@@ -1,4 +1,8 @@
 @import url("style.css");
+.navigationConfiguration
+{
+	display: none;
+}
 #navigationHoverMenu
 {
 	display: grid;

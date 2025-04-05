@@ -8,6 +8,24 @@ a
 {
 	color: #FFFF80;
 }
+#refresh
+{
+	width: fit-content;
+	margin: 16px auto 64px auto;
+	&>a
+	{
+		background-color: #002000;
+		text-align: center;
+		color: #E0E0E0;
+		text-decoration: none;
+		padding: 8px;
+		border-radius: 16px;
+		&:hover
+		{
+			background-color: #004000;
+		}
+	}
+}
 #images
 {
 	width: fit-content;

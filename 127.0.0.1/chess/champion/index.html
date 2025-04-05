@@ -3,9 +3,14 @@
 	<head>
 		<title>World Champions</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="/chess/navigation.css">
 	</head>
 	<body>
 		<p class="title">World Champions</p>
+		<div id="refresh">
+			<a href="index.html">Refresh</a>
+		</div>
+		<nav id="navigationHoverMenu"></nav>
 		<div class="info">
 			<p><a href="https://www.fide.com/">International Chess Federation</a> is in charge of hosting the world championships. The championships happen very two years, on even years for the open section and odd years for the women section.</p>
 			<p>As of <span id="datespan"></span>, the World Chess Champion is Gukesh Dommaraju, and the Women's World Chess Champion is Ju Wenjun.</p>
@@ -27,6 +32,9 @@
 			<img src="https://www.fide.com/wp-content/uploads/gukesh_wcc-1.png" alt="Gukesh Dommaraju">
 			<img src="https://www.fide.com/wp-content/uploads/2022/06/superju.png" alt="Ju Wenjun">
 		</div>
+		<p id="navigationEntryFile" class="navigationConfiguration">/chess/navigation.txt</p>
+		<p id="navigationBaseDirectory" class="navigationConfiguration">/chess/</p>
 		<script src="script.js"></script>
+		<script src="/chess/navigation.js"></script>
 	</body>
 </html>

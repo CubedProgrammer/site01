@@ -1,4 +1,5 @@
-const URL = "navigation.txt"
+const URL = navigationEntryFile.innerText.toString()
+const BASE_DIRECTORY = navigationBaseDirectory.innerText.toString()
 const getPages = async function()
 {
 	const response = await fetch(URL)
@@ -44,12 +45,13 @@ const buildHoverMenu = function(files)
 {
 	const callback = function(e, p, d)
 	{
+		const target = p + d
 		const linkdiv = document.createElement('div')
 		const child = document.createElement('div')
 		const link = document.createElement('a')
 		linkdiv.className = 'top'
-		link.href = p + d
-		link.append(p + d)
+		link.href = BASE_DIRECTORY + target
+		link.append(target.substring(target.lastIndexOf('/')+1))
 		linkdiv.append(link)
 		child.className = 'deeper'
 		e.append(linkdiv, child)
@@ -57,10 +59,6 @@ const buildHoverMenu = function(files)
 		{
 			e = child
 		}
-		/*else
-		{
-			e.append(linkdiv)
-		}*/
 		return e
 	}
 	buildMenu(files, navigationHoverMenu, callback)
@@ -77,6 +75,10 @@ const buildToggleMenu = function(files)
 		const link = document.createElement('a')
 		const plus = document.createElement('p')
 		const minus = document.createElement('p')
+		if(name.length > 1)
+		{
+			name = name.substring(name.lastIndexOf('/')+1)
+		}
 		rootDiv.className = 'top'
 		checkbox.type = 'checkbox'
 		checkbox.id = 'togglebox' + index
@@ -85,7 +87,7 @@ const buildToggleMenu = function(files)
 		plus.append('+')
 		minus.className = 'minus'
 		minus.append('-')
-		link.href = target
+		link.href = BASE_DIRECTORY + target
 		link.append(name)
 		label.append(plus, minus)
 		labelParent.className = 'labelParent'
@@ -110,8 +112,8 @@ const buildToggleMenu = function(files)
 			const space = document.createElement('p')
 			linkdiv.className = 'deeper'
 			space.append('+')
-			link.href = p + d
-			link.append(p + d)
+			link.href = BASE_DIRECTORY + target
+			link.append(d)
 			linkdiv.append(space, link)
 			e.append(linkdiv)
 			return e
