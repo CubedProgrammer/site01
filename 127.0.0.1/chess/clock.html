@@ -8,6 +8,16 @@
 	<body>
 		<p class="title">Clock</p>
 		<nav id="navigationHoverMenu"></nav>
+		<div id="clockdiv">
+			<div id="clockButtonParent">
+				<div id="clockButton1" class="clockButtonDiv"></div>
+				<div id="clockButton2" class="clockButtonDiv"></div>
+			</div>
+			<div id="clockDisplayDiv">
+				<div class="timeDisplayDiv">0:00</div>
+				<div class="timeDisplayDiv">0:00</div>
+			</div>
+		</div>
 		<div id="settingdiv">
 			<div class="inputdiv">
 				<div class="roundbutton">-5</div>
@@ -42,6 +52,8 @@
 				<label for="inc2input">Second Player Increment</label>
 			</div>
 		</div>
+		<div id="copytime" class="roundbutton">Second Same As First</div>
+		<div id="settime">Set Time</div>
 		<p id="navigationEntryFile" class="navigationConfiguration">navigation.txt</p>
 		<p id="navigationBaseDirectory" class="navigationConfiguration"></p>
 		<script src="clock.js"></script>

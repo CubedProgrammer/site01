@@ -35,7 +35,7 @@ class NumberInput
 		this.inputElem.value = this.parse() + n
 	}
 }
-const divArr = document.getElementsByClassName('inputdiv')
+const divArr = Array.from(document.getElementsByClassName('inputdiv'))
 const modifiers = [-5, -1, 1, 5]
 for(const elem of divArr)
 {
@@ -47,3 +47,13 @@ for(const elem of divArr)
 		b.addEventListener('click', callback)
 	}
 }
+const copyCB = (e) =>
+{
+	for(const [i, v] of divArr.slice(0, divArr.length / 2).entries())
+	{
+		const textbox1 = v.getElementsByTagName('input').item(0)
+		const textbox2 = divArr[i + divArr.length / 2].getElementsByTagName('input').item(0)
+		textbox2.value = textbox1.value
+	}
+}
+copytime.addEventListener('click', copyCB)

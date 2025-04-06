@@ -34,3 +34,51 @@ input
 		cursor: pointer;
 	}
 }
+.clockButtonDiv
+{
+	background-color: #202020;
+	width: 37.5%;
+	height: 64px;
+	margin: 0 12.5%;
+}
+.timeDisplayDiv
+{
+	background-color: #004000;
+	font-size: 64px;
+	width: 37.5%;
+	margin: auto 12.5%;
+	text-align: center;
+}
+#clockdiv
+{
+	margin-top: 32px;
+}
+#clockButtonParent
+{
+	display: flex;
+}
+#clockDisplayDiv
+{
+	background-color: #002000;
+	display: flex;
+	height: 128px;
+}
+#copytime
+{
+	width: fit-content;
+	margin: auto;
+}
+#settime
+{
+	background-color: #002000;
+	border-radius: 8px;
+	margin: 16px auto;
+	padding: 4px;
+	width: fit-content;
+	text-align: center;
+	&:hover
+	{
+		background-color: #008000;
+		cursor: pointer;
+	}
+}
