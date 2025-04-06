@@ -1,0 +1,36 @@
+@import url("style.css");
+input
+{
+	background-color: #002020;
+	color: #E0E0E0;
+	border: none;
+	outline: none;
+	font: inherit;
+	margin: 0 16px;
+	width: 8ch;
+	&:focus
+	{
+		background-color: #004040;
+		outline: 1px solid #E0E000;
+	}
+}
+.inputdiv
+{
+	display: flex;
+	width: 62.5%;
+	margin: 16px auto;
+}
+.roundbutton
+{
+	background-color: #002020;
+	border-radius: 8px;
+	margin: 0 16px;
+	padding: 8px;
+	min-width: 48px;
+	text-align: center;
+	&:hover
+	{
+		background-color: #008080;
+		cursor: pointer;
+	}
+}

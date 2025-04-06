@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Clock</title>
+		<link rel="stylesheet" href="clock.css">
+		<link rel="stylesheet" href="navigation.css">
+	</head>
+	<body>
+		<p class="title">Clock</p>
+		<nav id="navigationHoverMenu"></nav>
+		<div id="settingdiv">
+			<div class="inputdiv">
+				<div class="roundbutton">-5</div>
+				<div class="roundbutton">-</div>
+				<input id="time1input" value="3" type="text">
+				<div class="roundbutton">+</div>
+				<div class="roundbutton">+5</div>
+				<label for="time1input">First Player Time</label>
+			</div>
+			<div class="inputdiv">
+				<div class="roundbutton">-5</div>
+				<div class="roundbutton">-</div>
+				<input id="inc1input" value="2" type="text">
+				<div class="roundbutton">+</div>
+				<div class="roundbutton">+5</div>
+				<label for="inc1input">First Player Increment</label>
+			</div>
+			<div class="inputdiv">
+				<div class="roundbutton">-5</div>
+				<div class="roundbutton">-</div>
+				<input id="time2input" value="3" type="text">
+				<div class="roundbutton">+</div>
+				<div class="roundbutton">+5</div>
+				<label for="time2input">Second Player Time</label>
+			</div>
+			<div class="inputdiv">
+				<div class="roundbutton">-5</div>
+				<div class="roundbutton">-</div>
+				<input id="inc2input" value="2" type="text">
+				<div class="roundbutton">+</div>
+				<div class="roundbutton">+5</div>
+				<label for="inc2input">Second Player Increment</label>
+			</div>
+		</div>
+		<p id="navigationEntryFile" class="navigationConfiguration">navigation.txt</p>
+		<p id="navigationBaseDirectory" class="navigationConfiguration"></p>
+		<script src="clock.js"></script>
+		<script src="navigation.js"></script>
+	</body>
+</html>
