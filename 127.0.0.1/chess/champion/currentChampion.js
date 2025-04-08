@@ -1,2 +1,9 @@
-const times = championbody.lastElementChild.children.item(2)
-times.innerText += '-' + new Date().getFullYear()
+year = new Date().getFullYear()
+if(reigning.children.length === 0)
+{
+	reigning.innerText += '-' + year
+}
+else
+{
+	reigning.lastElementChild.innerText += '-' + year
+}
