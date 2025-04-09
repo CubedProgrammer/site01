@@ -8,7 +8,12 @@
 	<body>
 		<p class="title">List of World Chess Champions</p>
 		<nav id="navigationHoverMenu"></nav>
-		<p>The surname may come last in some of the names. In some parts of the world, the surname comes first, in other parts, the surname comes last.</p>
+		<p>The surname may come last in some of the names. In some parts of the world, the surname comes first, in other parts, the surname comes last. You have to scroll to the reigning champion yourself after pressing the button.</p>
+		<input id="highlight" type="checkbox">
+		<label for="highlight">
+			<p id="highlightedText">Unhighlight Reigning Champion</p>
+			<p id="unhighlightedText">Highlight Reigning Champion</p>
+		</label>
 		<table>
 			<thead>
 				<tr>
@@ -128,10 +133,10 @@
 					<td>2023-2024</td>
 					<td>Only invited to candidates because Serjey Karjakin's invitation was revoked for comments regarding the Russian invasion of Ukraine.</td>
 				</tr>
-				<tr>
+				<tr id="reigning">
 					<td>Gukesh Dommaraju</td>
 					<td>India</td>
-					<td id="reigning">2024</td>
+					<td>2024</td>
 					<td>Youngest champion at age 18, youngest challenger at age 17, only underage challenger.</td>
 				</tr>
 			</tbody>

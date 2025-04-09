@@ -26,3 +26,52 @@ td
 		}
 	}
 }
+#highlight
+{
+	display: none;
+	&~label
+	{
+		padding: 16px;
+		border-radius: 16px;
+		display: flex;
+		width: 32ch;
+		margin: 32px auto;
+		background-color: #200000;
+		&:hover
+		{
+			cursor: pointer;
+			background-color: #400000;
+		}
+		&>#highlightedText
+		{
+			display: none;
+			margin: auto;
+		}
+		&>#unhighlightedText
+		{
+			display: block;
+			margin: auto;
+		}
+	}
+	&:checked~label
+	{
+		background-color: #800000;
+		&:hover
+		{
+			cursor: pointer;
+			background-color: #400000;
+		}
+		&>#highlightedText
+		{
+			display: block;
+		}
+		&>#unhighlightedText
+		{
+			display: none;
+		}
+	}
+	&:checked~table #reigning
+	{
+		background-color: #800080;
+	}
+}

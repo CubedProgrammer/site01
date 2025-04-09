@@ -1,9 +1,4 @@
 year = new Date().getFullYear()
-if(reigning.children.length === 0)
-{
-	reigning.innerText += '-' + year
-}
-else
-{
-	reigning.lastElementChild.innerText += '-' + year
-}
+cell = reigning.children.item(2)
+yearElement = cell.children.length === 0 ? cell : cell.lastElementChild
+yearElement.innerText += '-' + year

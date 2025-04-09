@@ -8,7 +8,12 @@
 	<body>
 		<p class="title">List of Women World Chess Champions</p>
 		<nav id="navigationHoverMenu"></nav>
-		<p>The surname will come first or last depending on the part of the world the champion is from. There will be many of both, due to the vast amount of Soviet and Chinese champions.</p>
+		<p>The surname will come first or last depending on the part of the world the champion is from. There will be many of both, due to the vast amount of Soviet and Chinese champions. The button will not jump you to the reigning champion.</p>
+		<input id="highlight" type="checkbox">
+		<label for="highlight">
+			<p id="highlightedText">Unhighlight Reigning Champion</p>
+			<p id="unhighlightedText">Highlight Reigning Champion</p>
+		</label>
 		<table>
 			<thead>
 				<tr>
@@ -125,10 +130,10 @@
 					<td>2017-2018</td>
 					<td></td>
 				</tr>
-				<tr>
+				<tr id="reigning">
 					<td>Ju Wenjun</td>
 					<td>China</td>
-					<td id="reigning">2018</td>
+					<td>2018</td>
 					<td></td>
 				</tr>
 			</tbody>
