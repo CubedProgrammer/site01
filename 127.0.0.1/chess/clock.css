@@ -44,6 +44,11 @@ input
 	width: 37.5%;
 	height: 64px;
 	margin: 0 12.5%;
+	&:hover
+	{
+		cursor: pointer;
+		background-color: #404040;
+	}
 }
 .timeDisplayDiv
 {
@@ -84,6 +89,66 @@ input
 	background-color: #002000;
 	display: flex;
 	height: 128px;
+}
+#startStopDiv
+{
+	position: absolute;
+	margin: 20px calc(50% - 44px);
+	width: 88px;
+	height: 88px;
+	background-color: #004040;
+	&>label
+	{
+		display: block;
+		&>div
+		{
+			/*margin: 19px auto;*/
+			width: 88px;
+			height: 88px;
+		}
+	}
+	&:hover
+	{
+		background-color: #008080;
+		cursor: pointer;
+		& div
+		{
+			cursor: pointer;
+		}
+		&>label #startStopShape
+		{
+			border-left: 44px solid #00FFFF;
+		}
+	}
+}
+#startStopBox
+{
+	display: none;
+	&~label #startStopShape
+	{
+		position: relative;
+		left: 22px;
+		top: 19px;
+		width: 0%;
+		height: 0%;
+		border-bottom: 25px solid transparent;
+		border-top: 25px solid transparent;
+		border-left: 44px solid #008080;
+	}
+	&:checked~label #startStopShape
+	{
+		top: 25%;
+		left: 25%;
+		width: 50%;
+		height: 50%;
+		border: none;
+		border-radius: 8px;
+		background-color: #800000;
+	}
+	&:checked~label:hover #startStopShape
+	{
+		background-color: #FF0000;
+	}
 }
 #copytime
 {

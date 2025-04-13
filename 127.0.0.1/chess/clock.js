@@ -38,15 +38,25 @@ class NumberInput
 const divArr = Array.from(document.getElementsByClassName('inputdiv'))
 const modifiers = [-5, -1, 1, 5]
 const settingElements = [[time1input, inc1input], [time2input, inc2input]]
-const timeDisplayDivArr = Array.from(clockDisplayDiv.children)
+const timeDisplayDivArr = Array.from(clockDisplayDiv.getElementsByClassName('timeDisplayDiv'))
+const clockButtonDivArr = [clockButton1, clockButton2]
 const clock = {
 	timeIncrement: [
 		{time: 0, increment: 0},
 		{time: 0, increment: 0}
 	],
-	turn: 0
+	turn: 0,
+	on: false,
+	toggle: function()
+	{
+		this.timeIncrement[this.turn].time += this.timeIncrement[this.turn].increment
+		clockButtonDivArr[this.turn].style.marginTop = '48px'
+		clockButtonDivArr[this.turn++].style.height = '16px'
+		this.turn %= 2
+		clockButtonDivArr[this.turn].style.marginTop = null
+		clockButtonDivArr[this.turn].style.height = null
+	}
 }
-let clockOn = false
 for(const elem of divArr)
 {
 	const buttonArr = Array.from(elem.getElementsByClassName('roundbutton'))
@@ -102,6 +112,11 @@ const setCB = (e) =>
 	{
 		timer.style.backgroundColor = null
 	}
+	for(const element of clockButtonDivArr)
+	{
+		element.style.marginTop = null
+		element.style.height = null
+	}
 	for(const [i, [ti, ii]] of settingElements.entries())
 	{
 		const tInput = new NumberInput(ti)
@@ -116,7 +131,7 @@ const tickTock = (desired) =>
 {
 	--clock.timeIncrement[clock.turn].time
 	displayTime()
-	if(clockOn && clock.timeIncrement[clock.turn].time)
+	if(clock.on && clock.timeIncrement[clock.turn].time)
 	{
 		const current = Date.now()
 		setTimeout(tickTock, desired + 100 - current, desired + 100)
@@ -127,7 +142,14 @@ const tickTock = (desired) =>
 		{
 			timeDisplayDivArr[clock.turn].style.backgroundColor = '#400000'
 		}
-		clockOn = false
+		clock.on = false
+	}
+}
+const clockButtonAction = (e) =>
+{
+	if(clock.on)
+	{
+		clock.toggle()
 	}
 }
 const keyact = (e) =>
@@ -138,23 +160,35 @@ const keyact = (e) =>
 			setCB(e)
 			break
 		case 32:
-			if(clockOn)
+			if(clock.on)
 			{
-				clock.timeIncrement[clock.turn].time += clock.timeIncrement[clock.turn].increment
-				clock.turn++
-				clock.turn %= 2
+				clock.toggle()
 			}
 			else
 			{
 				setTimeout(tickTock, 100, Date.now() + 100)
-				clockOn = true
+				clock.on = true
 			}
 			break
 		case 83:
-			clockOn = false
+			clock.on = false
 			break
 	}
 }
+const startStopButtonAction = (e) =>
+{
+	clock.on = !clock.on
+	if(clock.on)
+	{
+		setTimeout(tickTock, 100, Date.now() + 100)
+	}
+}
+for(const element of clockButtonDivArr)
+{
+	element.addEventListener('click', clockButtonAction)
+}
+startStopBox.checked = false
 copytime.addEventListener('click', copyCB)
 settime.addEventListener('click', setCB)
 document.addEventListener('keyup', keyact)
+startStopBox.addEventListener('change', startStopButtonAction)
