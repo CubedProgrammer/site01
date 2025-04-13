@@ -17,8 +17,12 @@ input
 .inputdiv
 {
 	display: flex;
-	width: 62.5%;
+	width: fit-content;
 	margin: 16px auto;
+	&>label
+	{
+		width: 24ch;
+	}
 }
 .roundbutton
 {
@@ -48,6 +52,24 @@ input
 	width: 37.5%;
 	margin: auto 12.5%;
 	text-align: center;
+}
+#instructionLink
+{
+	color: inherit;
+	&:hover
+	{
+		background-color: #000040;
+	}
+}
+#instructions
+{
+	width: 75%;
+	margin: auto;
+}
+#settingdiv
+{
+	width: fit-content;
+	margin: auto;
 }
 #clockdiv
 {
