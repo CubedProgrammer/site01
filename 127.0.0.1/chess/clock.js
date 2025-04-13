@@ -47,6 +47,15 @@ const clock = {
 	],
 	turn: 0,
 	on: false,
+	start: function()
+	{
+		if(this.timeIncrement.every((n) => n.time))
+		{
+			setTimeout(tickTock, 100, Date.now() + 100)
+			clock.on = true
+			startStopBox.checked = true
+		}
+	},
 	toggle: function()
 	{
 		this.timeIncrement[this.turn].time += this.timeIncrement[this.turn].increment
@@ -142,7 +151,7 @@ const tickTock = (desired) =>
 		{
 			timeDisplayDivArr[clock.turn].style.backgroundColor = '#400000'
 		}
-		clock.on = false
+		startStopBox.checked = clock.on = false
 	}
 }
 const clockButtonAction = (e) =>
@@ -166,12 +175,12 @@ const keyact = (e) =>
 			}
 			else
 			{
-				setTimeout(tickTock, 100, Date.now() + 100)
-				clock.on = true
+				clock.start()
 			}
 			break
 		case 83:
 			clock.on = false
+			startStopBox.checked = false
 			break
 	}
 }
@@ -180,7 +189,7 @@ const startStopButtonAction = (e) =>
 	clock.on = !clock.on
 	if(clock.on)
 	{
-		setTimeout(tickTock, 100, Date.now() + 100)
+		clock.start()
 	}
 }
 for(const element of clockButtonDivArr)
