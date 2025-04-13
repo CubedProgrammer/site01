@@ -38,6 +38,7 @@ class NumberInput
 const divArr = Array.from(document.getElementsByClassName('inputdiv'))
 const modifiers = [-5, -1, 1, 5]
 const settingElements = [[time1input, inc1input], [time2input, inc2input]]
+const timeDisplayDivArr = Array.from(clockDisplayDiv.children)
 const clock = {
 	timeIncrement: [
 		{time: 0, increment: 0},
@@ -89,8 +90,7 @@ const copyCB = (e) =>
 }
 const displayTime = () =>
 {
-	const arr = Array.from(clockDisplayDiv.children)
-	for(const [i, timer] of arr.entries())
+	for(const [i, timer] of timeDisplayDivArr.entries())
 	{
 		for(; timer.lastChild; timer.removeChild(timer.lastChild));
 		timer.append(timeString(clock.timeIncrement[i].time))
@@ -98,6 +98,10 @@ const displayTime = () =>
 }
 const setCB = (e) =>
 {
+	for(const timer of timeDisplayDivArr)
+	{
+		timer.style.backgroundColor = null
+	}
 	for(const [i, [ti, ii]] of settingElements.entries())
 	{
 		const tInput = new NumberInput(ti)
@@ -105,19 +109,24 @@ const setCB = (e) =>
 		clock.timeIncrement[i].time = tInput.parse() * 600
 		clock.timeIncrement[i].increment = iInput.parse() * 10
 	}
+	clock.turn = 0
 	displayTime()
 }
-const tickTock = (last) =>
+const tickTock = (desired) =>
 {
 	--clock.timeIncrement[clock.turn].time
 	displayTime()
 	if(clockOn && clock.timeIncrement[clock.turn].time)
 	{
 		const current = Date.now()
-		setTimeout(tickTock, last + 200 - current, current)
+		setTimeout(tickTock, desired + 100 - current, desired + 100)
 	}
 	else
 	{
+		if(clock.timeIncrement[clock.turn].time === 0)
+		{
+			timeDisplayDivArr[clock.turn].style.backgroundColor = '#400000'
+		}
 		clockOn = false
 	}
 }
@@ -137,7 +146,7 @@ const keyact = (e) =>
 			}
 			else
 			{
-				setTimeout(tickTock, 100, Date.now())
+				setTimeout(tickTock, 100, Date.now() + 100)
 				clockOn = true
 			}
 			break
