@@ -72,6 +72,50 @@ input[type=checkbox]
 		width: 128px;
 	}
 }
+#calculator
+{
+	width: fit-content;
+	margin: auto;
+	text-align: center;
+}
+#finput
+{
+	margin: 32px;
+	width: 16ch;
+	background-color: #200000;
+	color: #FFFFFF;
+	border: none;
+	font: inherit;
+	text-align: right;
+	&:focus
+	{
+		outline: 2px solid #E0E0E0;
+	}
+}
+#foutput
+{
+	background-color: #200000;
+	color: #FFFFFF;
+	max-width: 64ch;
+	overflow: auto;
+}
+#calculateButton
+{
+	background-color: #004040;
+	border: 8px outset #004040;
+	color: #E0E0E0;
+	font: inherit;
+	&:hover
+	{
+		background-color: #008080;
+		border: 8px outset #008080;
+		cursor: pointer;
+	}
+	&:active
+	{
+		border: 8px inset #008080;
+	}
+}
 #information
 {
 	width: 75%;
