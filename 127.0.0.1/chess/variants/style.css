@@ -1,0 +1,31 @@
+@import url("/chess/style.css");
+body
+{
+	display: flex;
+	height: 100%;
+}
+#navigationContainer
+{
+	width: 25%;
+	background-color: #000040;
+	height: 100%;
+}
+#refresh
+{
+	width: fit-content;
+	margin: 16px auto 64px auto;
+	&>a
+	{
+		background-color: #002020;
+		text-align: center;
+		color: #E0E0E0;
+		text-decoration: none;
+		padding: 8px;
+		border-radius: 16px;
+		&:hover
+		{
+			background-color: #004040;
+		}
+	}
+}
+

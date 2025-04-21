@@ -125,7 +125,7 @@ const buildToggleMenu = function(files)
 const main = async function()
 {
 	let pageArray = null
-	if(navigationHoverMenu)
+	if(document.getElementById('navigationHoverMenu'))
 	{
 		pageArray = await getPages()
 		if(pageArray)
@@ -133,7 +133,7 @@ const main = async function()
 			buildHoverMenu(pageArray)
 		}
 	}
-	if(navigationToggleMenu)
+	if(document.getElementById('navigationToggleMenu'))
 	{
 		pageArray ??= await getPages()
 		if(pageArray)

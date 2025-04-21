@@ -6,3 +6,5 @@ men.html
 women.html
 ..
 clock.html
+variants/
+..
