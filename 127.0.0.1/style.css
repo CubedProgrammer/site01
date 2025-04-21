@@ -39,8 +39,15 @@ button.table
 {
 	background-color: #002000;
 	border: 8px outset #002000;
+	margin: 16px;
 }
-button.table:hover,button.table:focus
+button.table:hover
+{
+	background-color: #004000;
+	border: 8px outset #004000;
+	cursor: pointer;
+}
+button.table:focus
 {
 	background-color: #004000;
 	border: 8px outset #004000;
@@ -53,8 +60,15 @@ button.order
 {
 	background-color: #200000;
 	border: 8px outset #200000;
+	margin: 16px;
 }
-button.order:hover,button.order:focus
+button.order:hover
+{
+	background-color: #400000;
+	border: 8px outset #400000;
+	cursor: pointer;
+}
+button.order:focus
 {
 	background-color: #400000;
 	border: 8px outset #400000;
@@ -164,4 +178,9 @@ button.order:active
 {
 	margin: auto;
 	border-spacing: 0;
+}
+#external>p:hover>a
+{
+	background-color: #000040;
+	color: #00E000;
 }
