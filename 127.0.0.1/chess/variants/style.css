@@ -1,14 +1,30 @@
 @import url("/chess/style.css");
 body
 {
-	display: flex;
 	height: 100%;
+	margin: 0;
+}
+td
+{
+	padding: 8px;
 }
 #navigationContainer
 {
 	width: 25%;
+	height: 9999px;
+	top: 0;
 	background-color: #000040;
-	height: 100%;
+	position: fixed;
+}
+#mainContent
+{
+	margin-left: 25%;
+	margin-right: 0;
+	&>p
+	{
+		margin-left: 64px;
+		margin-right: 64px;
+	}
 }
 #refresh
 {
