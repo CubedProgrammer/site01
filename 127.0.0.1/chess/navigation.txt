@@ -8,4 +8,5 @@ women.html
 clock.html
 variants/
 generator.html
+template.html
 ..

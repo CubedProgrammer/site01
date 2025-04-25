@@ -1,0 +1,6 @@
+@import url("/chess/style.css");
+@import url("generator.css");
+.subtitle
+{
+	font-size: 48px;
+}
