@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Generator</title>
+		<link rel="stylesheet" href="generator.css">
+		<link rel="stylesheet" href="/chess/navigation.css">
+	</head>
+	<body>
+		<div id="navigationContainer">
+			<nav id="navigationToggleMenu"></nav>
+		</div>
+		<div id="mainContent">
+			<p class="title">Generator</p>
+			<form method="post" action="generate">
+				<div>
+					<input maxlength="64" name="title" type="text">
+				</div>
+				<textarea name="content" cols="32" rows="16"></textarea>
+				<div>
+					<input id="submit" type="submit">
+				</div>
+			</form>
+		</div>
+		<p id="navigationEntryFile" class="navigationConfiguration">/chess/navigation.txt</p>
+		<p id="navigationBaseDirectory" class="navigationConfiguration">/chess/</p>
+		<script src="/chess/navigation.js"></script>
+	</body>
+</html>

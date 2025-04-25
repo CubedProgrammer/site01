@@ -1,0 +1,68 @@
+@import url("/chess/style.css");
+body
+{
+	margin: 0;
+}
+#navigationContainer
+{
+	width: 25%;
+	height: 8192px;
+	top: 0;
+	background-color: #000040;
+	position: fixed;
+}
+#mainContent
+{
+	margin-left: 25%;
+	margin-right: 0;
+	&>p
+	{
+		margin-left: 64px;
+		margin-right: 64px;
+	}
+}
+form
+{
+	background-color: #000040;
+	padding: 16px;
+	width: fit-content;
+	margin: auto;
+	& input,textarea
+	{
+		font: inherit;
+		background-color: #202020;
+		color: #E0E0E0;
+		border: none;
+		padding: 8px;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+	& input[type=text],textarea
+	{
+		width: 32ch;
+		&:focus
+		{
+			outline: 4px solid #404040;
+		}
+	}
+	&>div:has(#submit)
+	{
+		width: fit-content;
+		margin: auto;
+	}
+	& #submit
+	{
+		background-color: #400000;
+		border: 8px outset #400000;
+		&:hover
+		{
+			background-color: #800000;
+			border: 8px outset #800000;
+			cursor: pointer;
+		}
+		&:active
+		{
+			border-style: inset;
+		}
+	}
+}
