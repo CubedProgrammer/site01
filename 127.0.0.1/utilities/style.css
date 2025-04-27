@@ -1,0 +1,27 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #002000;
+	color: #E0E0E0;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+.subtitle
+{
+	font-size: 48px;
+	text-align: center;
+}
+a
+{
+	color: inherit;
+	text-decoration: none;
+	&>div
+	{
+		width: 75%;
+		margin: auto;
+	}
+}
