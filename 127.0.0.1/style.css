@@ -20,6 +20,8 @@ td a
 {
 	text-decoration: none;
 	color: inherit;
+	width: 100%;
+	display: block;
 }
 td a:visited
 {

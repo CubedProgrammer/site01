@@ -11,11 +11,11 @@
 		</div>
 		<div id="mainContent">
 			<p class="title">Generator</p>
-			<form method="post" action="generate">
+			<form method="post" enctype="multipart/form-data" action="generate">
 				<div>
 					<input maxlength="64" name="title" type="text">
 				</div>
-				<textarea name="content" cols="32" rows="16"></textarea>
+				<textarea wrap="off" name="content" cols="32" rows="16"></textarea>
 				<div>
 					<input id="submit" value="Generate" type="submit">
 				</div>

@@ -6,7 +6,7 @@ body
 #navigationContainer
 {
 	width: 25%;
-	height: 8192px;
+	height: 100vh;
 	top: 0;
 	background-color: #000040;
 	position: fixed;
