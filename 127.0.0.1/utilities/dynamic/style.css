@@ -1,0 +1,33 @@
+body
+{
+	background-color: #202000;
+	color: #E0E0E0;
+	font-family: monospace;
+	font-size: 32px;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+table
+{
+	border-spacing: 0;
+	border: 1px solid #E0E0E0;
+	margin: auto;
+	& td
+	{
+		border: 1px solid #E0E0E0;
+		padding: 8px;
+		max-width: 1024px;
+		min-width: 256px;
+		&:nth-child(odd)
+		{
+			text-align: center;
+		}
+		&>a
+		{
+			color: inherit;
+		}
+	}
+}
