@@ -181,6 +181,45 @@ button.order:active
 	margin: auto;
 	border-spacing: 0;
 }
+#portalBoxDiv
+{
+	background-color: #000040;
+	width: fit-content;
+	padding: 32px;
+	margin: auto;
+}
+#urlbox
+{
+	background-color: #202020;
+	color: inherit;
+	width: 64ch;
+	font: inherit;
+	padding: 4px;
+	border: none;
+	display: block;
+	margin: 16px auto;
+	&:focus
+	{
+		outline: 2px solid #404040;
+	}
+}
+#urlbutton
+{
+	background-color: #002000;
+	border: 8px outset #002000;
+	display: block;
+	margin: auto;
+	&:hover,&:focus
+	{
+		background-color: #004000;
+		border-color: #004000;
+		cursor: pointer;
+	}
+	&:active
+	{
+		border-style: inset;
+	}
+}
 #external>p:hover>a
 {
 	background-color: #000040;

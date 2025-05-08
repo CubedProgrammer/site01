@@ -69,6 +69,7 @@ var sortfiles = (f) =>
 }
 var onsortname = (e) => sortfiles(n => n.name)
 var onsorttype = (e) => sortfiles(n => n.type)
+var onvisit = (e) => open(urlbox.value)
 var filemap = (r) => {return{name: r.children.item(0).children.item(0).innerText, type: r.children.item(1).innerText}}
 var temp = Array.from(ftc.item(0).children).map(filemap)
 var files = Array.from(temp)
@@ -79,3 +80,4 @@ ael(gb, 'click', ongrid)
 ael(rb, 'click', onreverse)
 ael(snb, 'click', onsortname)
 ael(stb, 'click', onsorttype)
+ael(urlbutton, 'click', onvisit)
