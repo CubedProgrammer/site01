@@ -105,7 +105,6 @@ int redirect(void*data, size_t len, int c, char*start)
 			write(c, meta, sizeof(meta));
 			write(c, response, rescnt);
 			close(c);
-			free(data);
 			++ind;
 		}
 		else

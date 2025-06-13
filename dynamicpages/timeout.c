@@ -63,10 +63,6 @@ int timeout(void*dat, struct eventqueue*q, int c, const char*sarg)
 					free(info->buf);
 					free(info);
 				}
-				else
-				{
-					free(dat);
-				}
 			}
 			else
 			{

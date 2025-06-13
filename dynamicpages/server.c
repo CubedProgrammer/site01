@@ -7,6 +7,7 @@
 #include<sys/un.h>
 #include<unistd.h>
 #include"address.h"
+#include"crandom.h"
 #include"eventloop.h"
 #include"redirect.h"
 #include"timeout.h"
@@ -67,11 +68,15 @@ void handle(struct eventqueue*eq, int c)
 					fail = address(c, addr);
 				}
 			}
+			else if(memcmp(start, "utilities/dynamic/crandom", 25) == 0)
+			{
+				if(start[25] == '\0' || start[25] == '/')
+				{
+					fail = crandom(start + 25, c);
+				}
+			}
 		}
-		if(fail)
-		{
-			free(data);
-		}
+		free(data);
 	}
 	if(fail)
 	{
