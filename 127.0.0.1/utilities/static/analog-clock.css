@@ -1,0 +1,9 @@
+body
+{
+	background-color: #202020;
+}
+#mainCanvas
+{
+	margin: auto;
+	display: block;
+}
