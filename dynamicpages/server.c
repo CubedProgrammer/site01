@@ -2,11 +2,13 @@
 #include<stdint.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include <string.h>
 #include<sys/select.h>
 #include<sys/socket.h>
 #include<sys/un.h>
 #include<unistd.h>
 #include"address.h"
+#include"chess_variants_generate.h"
 #include"crandom.h"
 #include"eventloop.h"
 #include"redirect.h"
@@ -74,6 +76,10 @@ void handle(struct eventqueue*eq, int c)
 				{
 					fail = crandom(start + 25, c);
 				}
+			}
+			else if(memcmp(start, "chess/variants/generate", 23) == 0)
+			{
+				fail = chess_variants_generate(start + 24, len, c);
 			}
 		}
 		free(data);

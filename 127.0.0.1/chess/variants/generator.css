@@ -11,6 +11,10 @@ body
 	background-color: #000040;
 	position: fixed;
 }
+#navigationToggleMenu
+{
+	height: 100%;
+}
 #mainContent
 {
 	margin-left: 25%;
