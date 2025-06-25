@@ -1,0 +1,24 @@
+tbody
+{
+	&>tr:nth-child(odd)
+	{
+		background-color: #002000;
+		&:hover
+		{
+			background-color: #004000;
+		}
+	}
+	&>tr:nth-child(even)
+	{
+		background-color: #200000;
+		&:hover
+		{
+			background-color: #400000;
+		}
+	}
+}
+td
+{
+	min-width: 256px;
+	padding: 4px 16px;
+}

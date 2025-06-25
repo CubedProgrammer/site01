@@ -1,4 +1,5 @@
 #include<arpa/inet.h>
+#include <stddef.h>
 #include<stdint.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -33,11 +34,10 @@ int timeout(void*dat, struct eventqueue*q, int c, const char*sarg)
 	{
 		char message[] = "F    Given a file name, parses it into a number N in base ten, waits N seconds before responding.";
 		uint32_t len = sizeof(message) - 1;
-		dummy.len = htonl(len);
+		dummy.len = htonl(len - 5);
 		memcpy(message + 1, dummy.bytes, sizeof(uint32_t));
-		write(c, message, len);
+		size_t cnt = write(c, message, len);
 		close(c);
-		free(dat);
 	}
 	else if(cnt)
 	{
