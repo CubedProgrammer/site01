@@ -18,6 +18,42 @@ int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodyl
 	char*paraend;
 	struct string_builder builder;
 	fail = init_string_builder(&builder);
+	FILE*fh = fopen("127.0.0.1/chess/variants/template.html", "r");
+	char filebuf[512];
+	size_t bufsz = sizeof(filebuf);
+	char*filecontinue = filebuf, *last = filebuf;
+	size_t bcnt = 1;
+	for(; titlelen > 0 && isspace(title[titlelen - 1]); --titlelen);
+	if(fh != NULL)
+	{
+		unsigned xcnt = 0;
+		while(bcnt > 0 && xcnt < 3)
+		{
+			bcnt = fread(filebuf, 1, bufsz, fh);
+			filecontinue = memchr(filebuf, 'X', bcnt);
+			last = filebuf;
+			while(filecontinue != NULL)
+			{
+				fail += append_string_builder(&builder, last, filecontinue);
+				if(xcnt < 2)
+				{
+					fail += append_string_builder(&builder, title, title + titlelen);
+				}
+				last = ++filecontinue;
+				++xcnt;
+				filecontinue = memchr(filecontinue, 'X', filebuf + bcnt - filecontinue);
+			}
+			if(xcnt < 3)
+			{
+				fail += append_string_builder(&builder, last, filebuf + bcnt);
+			}
+		}
+		fail = fail != 0;
+	}
+	else
+	{
+		fail = 1;
+	}
 	for(char*it = body; it != body + bodylen && !fail; ++it)
 	{
 		if(*it == '\n')
@@ -26,6 +62,7 @@ int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodyl
 			for(--paraend; paraend != parabegin && isspace(paraend[-1]); --paraend);
 			if(parabegin != paraend)
 			{
+				fail = fail || append_string_builder_single(&builder, '\n');
 				if(*parabegin == '#')
 				{
 					fail = fail || append_string_builder_nullterm(&builder, stopening);
@@ -41,6 +78,16 @@ int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodyl
 			}
 			parabegin = it + 1;
 		}
+	}
+	if(fh != NULL)
+	{
+		fail = fail || append_string_builder(&builder, last, filebuf + bcnt);
+		while(!fail && bcnt > 0)
+		{
+			bcnt = fread(filebuf, 1, bufsz, fh);
+			fail = fail || append_string_builder(&builder, filebuf, filebuf + bcnt);
+		}
+		fclose(fh);
 	}
 	if(!fail)
 	{
@@ -79,16 +126,12 @@ int chess_variants_generate(void*mem, unsigned len, int c)
 			}
 			else if(it - curr == delimlast - delimfirst)
 			{
-				puts("hit boundary");
-				printf("%u is fieldcnt\n", fieldcnt);
 				lncnt = 0;
 				toadd = 1;
 				storelen = memcmp(curr, delimfirst, delimlast - delimfirst) == 0 && fieldcnt <= 2;
 			}
 			else if(it - curr == delimlast - delimfirst + 2)
 			{
-				puts("hit boundary end");
-				printf("%u is fieldcnt\n", fieldcnt);
 				storelen = memcmp(curr, delimfirst, delimlast - delimfirst) == 0 && fieldcnt <= 2;
 			}
 			if(storelen)
@@ -112,12 +155,6 @@ int chess_variants_generate(void*mem, unsigned len, int c)
 	}
 	if(fieldcnt >= 2)
 	{
-		puts("begin of form");
-		fwrite(title, 1, titlelen, stdout);
-		puts("separator");
-		fwrite(body, 1, bodylen, stdout);
-		puts("end of form");
-		printf("%zu %zu\n", titlelen, bodylen);
 		fail = actual_generator(c, title, titlelen, body, bodylen);
 	}
 	return fail;
