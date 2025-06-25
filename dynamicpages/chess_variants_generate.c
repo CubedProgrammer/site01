@@ -1,7 +1,60 @@
+#include<ctype.h>
+#include<netinet/in.h>
+#include<stdint.h>
 #include<stdio.h>
 #include<string.h>
 #include<unistd.h>
+#include"utils/string_builder.h"
+#define WRITE_ARRAY(fd, a)(write(fd, a, sizeof(a) - 1))
 const char crlf[] = "\r\n";
+const char popening[] = "<p class=\"paragraph\">";
+const char pclosing[] = "</p>";
+const char stopening[] = "<p class=\"subtitle\">";
+const char stclosing[] = "</p>";
+int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodylen)
+{
+	int fail = 0;
+	char*parabegin = body;
+	char*paraend;
+	struct string_builder builder;
+	fail = init_string_builder(&builder);
+	for(char*it = body; it != body + bodylen && !fail; ++it)
+	{
+		if(*it == '\n')
+		{
+			paraend = it;
+			for(--paraend; paraend != parabegin && isspace(paraend[-1]); --paraend);
+			if(parabegin != paraend)
+			{
+				if(*parabegin == '#')
+				{
+					fail = fail || append_string_builder_nullterm(&builder, stopening);
+					fail = fail ||append_string_builder(&builder, parabegin + 1, paraend);
+					fail = fail || append_string_builder_nullterm(&builder, stclosing);
+				}
+				else
+				{
+					fail = fail || append_string_builder_nullterm(&builder, popening);
+					fail = fail || append_string_builder(&builder, parabegin, paraend);
+					fail = fail || append_string_builder_nullterm(&builder, pclosing);
+				}
+			}
+			parabegin = it + 1;
+		}
+	}
+	if(!fail)
+	{
+		uint32_t lenbytes = htonl(builder.len);
+		char meta[sizeof(lenbytes) + 1];
+		meta[0] = 'F';
+		memcpy(meta + 1, &lenbytes, sizeof(lenbytes));
+		write(c, meta, sizeof(meta));
+		write(c, builder.str, builder.len);
+		close(c);
+	}
+	free_string_builder(&builder);
+	return fail;
+}
 int chess_variants_generate(void*mem, unsigned len, int c)
 {
 	int fail = 0;
@@ -65,7 +118,7 @@ int chess_variants_generate(void*mem, unsigned len, int c)
 		fwrite(body, 1, bodylen, stdout);
 		puts("end of form");
 		printf("%zu %zu\n", titlelen, bodylen);
+		fail = actual_generator(c, title, titlelen, body, bodylen);
 	}
-	close(c);
 	return fail;
 }
