@@ -11,6 +11,7 @@ const char popening[] = "<p class=\"paragraph\">";
 const char pclosing[] = "</p>";
 const char stopening[] = "<p class=\"subtitle\">";
 const char stclosing[] = "</p>";
+const char imgtag[] = "<img src=\"\">";
 int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodylen)
 {
 	int fail = 0;
@@ -66,8 +67,14 @@ int actual_generator(int c, char*title, size_t titlelen, char*body, size_t bodyl
 				if(*parabegin == '#')
 				{
 					fail = fail || append_string_builder_nullterm(&builder, stopening);
-					fail = fail ||append_string_builder(&builder, parabegin + 1, paraend);
+					fail = fail || append_string_builder(&builder, parabegin + 1, paraend);
 					fail = fail || append_string_builder_nullterm(&builder, stclosing);
+				}
+				else if(*parabegin == '$')
+				{
+					fail = fail || append_string_builder(&builder, imgtag, imgtag + 10);
+					fail = fail || append_string_builder(&builder, parabegin + 1, paraend);
+					fail = fail || append_string_builder(&builder, imgtag + 10, imgtag + 12);
 				}
 				else
 				{
