@@ -1,0 +1,6 @@
+Chancellor/Empress
+The chancellor goes by many names, empress, marshall, knook, and of course, chancellor. It combines the movement of a rook and a knight.
+$chancellor-moves.png
+The chancellor is represented using the letter E, or a knight with the rook's teethed top-wall beneath it, upside-down.
+#Strength
+The chancellor is about a half-pawn weaker than the queen. It is stronger than a rook and knight.

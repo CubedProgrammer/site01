@@ -10,5 +10,8 @@ variants/
 generator.html
 template.html
 fairy/
+amazon.html
+chancellor.html
+archbishop.html
 ..
 ..

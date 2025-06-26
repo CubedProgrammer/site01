@@ -3,4 +3,10 @@
 .subtitle
 {
 	font-size: 48px;
+	text-align: center;
+}
+img
+{
+	display: block;
+	margin: auto;
 }

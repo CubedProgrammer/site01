@@ -1,0 +1,7 @@
+Archbishop/Princess
+The archbishop, also called princess, is a piece that can move like a bishop and a knight. Despite being weaker than the chancellor and the queen, it can deliver checkmate on its own if the king is in a corner two squares diagonally apart.
+$archbishop-moves.png
+The archbishop is represented by the letter H, and by a knight with the bishop's hat strings beneath it.
+#Strength
+The archbishop is much stronger than a bishop and a knight, being worth about eight pawns. This may be surprising as it is so close to the strength of a queen.
+The reason is a knight and bishop complement each other when on same colour squares, or in this case, the same squares. This allows the archbishop to control adjacent squares of both colours, which is important for checkmating as well as defence.

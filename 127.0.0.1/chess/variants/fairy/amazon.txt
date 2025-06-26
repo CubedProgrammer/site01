@@ -1,1 +1,7 @@
 Amazon
+The amazon is a fairy chess piece that combines the moves of a rook, bishop, and knight. When placed in the center of the board, it can control more than half the squares on the board. It can also deliver checkmate without assistance.
+$amazon-moves.png
+The amazon is typically represented using a capital A in algebraic notation, and represented using a kinght with a queen crown on its head as a picture.
+#Strength
+The amazon is much stronger than having a rook, bishop, and knight separate. It is estimated to be worth 13 pawns, more than a queen and a knight. The amazon can be used to fork pieces in sixteen different directions, much better than a queen.
+The amazon enables more checkmate patterns, a king on the edge will be mated by an amazon if it is a knight's move apart, or two squares apart orthogonally, it will also be mated if it is two squares apart diagonally and in a corner.
