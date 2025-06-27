@@ -11,7 +11,7 @@ body
 	text-align: center;
 	margin: 16px;
 }
-button
+button,label
 {
 	text-align: center;
 	font: inherit;
@@ -31,11 +31,20 @@ button
 		border-style: inset;
 	}
 }
+label
+{
+	width: fit-content;
+}
 #calculator
 {
 	width: fit-content;
 	margin: auto;
 	background-color: #002020;
+	padding: 16px;
+	&:has(~#calctoggle:checked)
+	{
+		display: none;
+	}
 }
 #boxes>div
 {
@@ -60,4 +69,34 @@ button
 #result
 {
 	text-align: center;
+	margin: 8px;
+}
+#calctoggle
+{
+	display: none;
+	&:checked~label>#hidetext
+	{
+		display: none;
+	}
+	&:checked~label>#showtext
+	{
+		display: block;
+	}
+	&~label>#showtext
+	{
+		display: none;
+	}
+	&~label:hover
+	{
+		cursor: pointer;
+	}
+}
+#hidetext,#showtext
+{
+	margin: 0;
+}
+article
+{
+	width: 75%;
+	margin: auto;
 }
