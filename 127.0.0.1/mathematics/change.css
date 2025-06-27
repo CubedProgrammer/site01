@@ -1,0 +1,63 @@
+body
+{
+	font-size: 32px;
+	font-family: monospace;
+	background-color: #200000;
+	color: #E0E0E0;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+	margin: 16px;
+}
+button
+{
+	text-align: center;
+	font: inherit;
+	display: block;
+	background-color: #200000;
+	color: #E0FFFF;
+	border: 8px outset #200000;
+	margin: 8px auto;
+	&:hover
+	{
+		background-color: #400000;
+		border-color: #400000;
+		cursor: pointer;
+	}
+	&:active
+	{
+		border-style: inset;
+	}
+}
+#calculator
+{
+	width: fit-content;
+	margin: auto;
+	background-color: #002020;
+}
+#boxes>div
+{
+	padding: 8px;
+	text-align: right;
+	&>p
+	{
+		display: inline;
+	}
+	&>input
+	{
+		font: inherit;
+		border: none;
+		background-color: #202020;
+		color: #E0E0E0;
+		&:focus
+		{
+			outline: 2px solid #E0E0E0;
+		}
+	}
+}
+#result
+{
+	text-align: center;
+}
