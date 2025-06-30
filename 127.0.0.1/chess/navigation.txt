@@ -13,5 +13,6 @@ fairy/
 amazon.html
 chancellor.html
 archbishop.html
+mann.html
 ..
 ..

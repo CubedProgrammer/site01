@@ -4,15 +4,15 @@ const getDistance = function(time, derivatives)
 	let denominator = 1
 	let distance = 0
 	derivatives.reverse()
-	for(let i = 0; i < derivatives.length; i++)
+	for(let i = 1; i < derivatives.length; i++)
 	{
-		denominator *= i + 1
+		denominator *= i
 	}
 	for(const [i, v] of derivatives.entries())
 	{
-		distance += v / denominator
 		distance *= time
-		denominator /= derivatives.length - i
+		distance += v / denominator
+		denominator /= derivatives.length - i - 1
 	}
 	return distance
 }

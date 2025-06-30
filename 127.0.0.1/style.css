@@ -181,6 +181,35 @@ button.order:active
 	margin: auto;
 	border-spacing: 0;
 }
+#projecttable
+{
+	border-spacing: 0;
+	background-color: #000040;
+	& a
+	{
+		display: block;
+		height: 100%;
+		width: 75%;
+		margin: 0 auto;
+		transition-duration: 500ms;
+		&:hover
+		{
+			background-color: #000080;
+			width: 100%;
+			transition-duration: 500ms;
+		}
+		&>p
+		{
+			margin: 0;
+			padding: 8px 0;
+		}
+	}
+	& td
+	{
+		width: 25%;
+		padding: 0;
+	}
+}
 #portalBoxDiv
 {
 	background-color: #000040;
