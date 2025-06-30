@@ -1,0 +1,5 @@
+Mann
+The mann is a piece that moves like a king, but it is subject to check or checkmate. It has the same strength as a king, but is not priceless.
+$mann-moves.png
+#Strength
+The mann is a slow piece, but powerful, as it controls many adjacent squares, as well as being able to stop pawn chains and fork minor pieces. It has similar strength to a minor piece, being worth three pawns.
