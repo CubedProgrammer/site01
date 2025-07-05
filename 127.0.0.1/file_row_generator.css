@@ -15,9 +15,15 @@ button
 	font-size: 32px;
 	margin: auto;
 }
+button:hover
+{
+	border-color: #008000;
+	background-color: #008000;
+	cursor: pointer;
+}
 button:active
 {
-	border: 8px inset #004000;
+	border-style: inset;
 }
 select
 {
