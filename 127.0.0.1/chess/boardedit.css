@@ -1,0 +1,198 @@
+input[type=radio],input[type=checkbox]
+{
+	display: none;
+}
+#blackpieces,#whitepieces
+{
+	margin: auto;
+	width: fit-content;
+	display: flex;
+	background-color: #800000;
+}
+label.choice
+{
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	&:has(>input:checked)
+	{
+		background-color: #008000;
+	}
+	&:hover
+	{
+		background-color: #FF0000;
+		cursor: pointer;
+	}
+}
+table:has(#board)
+{
+	border-spacing: 0;
+	border: none;
+}
+tr:nth-child(odd)>td:nth-child(odd),tr:nth-child(even)>td:nth-child(even)
+{
+	background-color: #FFC080;
+}
+tr:nth-child(odd)>td:nth-child(even),tr:nth-child(even)>td:nth-child(odd)
+{
+	background-color: #804000;
+}
+#board td
+{
+	min-width: 96px;
+	height: 96px;
+	border: none;
+}
+td>label
+{
+	display: none;
+	height: 100%;
+	&>img
+	{
+		display: none;
+	}
+	&:has(>input:checked)
+	{
+		display: block;
+		&>img
+		{
+			display: block;
+		}
+	}
+}
+#maineditor:has( #blackking:checked) td>label.blackking
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackking:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #blackqueen:checked) td>label.blackqueen
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackqueen:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #blackrook:checked) td>label.blackrook
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackrook:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #blackbishop:checked) td>label.blackbishop
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackbishop:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #blackknight:checked) td>label.blackknight
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackknight:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #blackpawn:checked) td>label.blackpawn
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.blackpawn:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whiteking:checked) td>label.whiteking
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.whiteking:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whitequeen:checked) td>label.whitequeen
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.whitequeen:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whiterook:checked) td>label.whiterook
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.whiterook:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whitebishop:checked) td>label.whitebishop
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.whitebishop:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whiteknight:checked) td>label.whiteknight
+{
+	display: block;
+	&:has(~label>input:checked)
+	{
+		display: none;
+	}
+}
+label.whiteknight:has(>input:checked)~label
+{
+	height: 0;
+}
+#maineditor:has( #whitepawn:checked) td>label.whitepawn
+{
+	display: block;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Board Editor</title>
+		<link rel="stylesheet" href="boardedit.css">
+		<link rel="stylesheet" href="navigation.css">
+	</head>
+	<body>
+		<p class="title">Board Editor</p>
+		<nav id="navigationHoverMenu"></nav>
+		<div id="maineditor">
+			<div id="blackpieces">
+				<input type="radio" name="piecechoice" id="blackking">
+				<input type="radio" name="piecechoice" id="blackqueen">
+				<input type="radio" name="piecechoice" id="blackrook">
+				<input type="radio" name="piecechoice" id="blackbishop">
+				<input type="radio" name="piecechoice" id="blackknight">
+				<input type="radio" name="piecechoice" id="blackpawn">
+			</div>
+			<table>
+				<tbody id="board"></tbody>
+			</table>
+			<div id="whitepieces">
+				<input type="radio" name="piecechoice" id="whiteking">
+				<input type="radio" name="piecechoice" id="whitequeen">
+				<input type="radio" name="piecechoice" id="whiterook">
+				<input type="radio" name="piecechoice" id="whitebishop">
+				<input type="radio" name="piecechoice" id="whiteknight">
+				<input type="radio" name="piecechoice" id="whitepawn">
+			</div>
+		</div>
+		<p id="navigationEntryFile" class="navigationConfiguration">navigation.txt</p>
+		<p id="navigationBaseDirectory" class="navigationConfiguration"></p>
+		<script src="boardedit.js"></script>
+		<script src="navigation.js"></script>
+	</body>
+</html>
