@@ -3,3 +3,4 @@ navigation.html,Navigation Menu
 champion,List of World Champions
 clock.html,Chess Clock
 variants,Chess Variants
+boardedit.html,Board Editor

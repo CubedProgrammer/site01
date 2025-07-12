@@ -16,3 +16,4 @@ archbishop.html
 mann.html
 ..
 ..
+boardedit.html

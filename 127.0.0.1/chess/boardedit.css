@@ -1,3 +1,8 @@
+#instruction
+{
+	width: 75%;
+	margin: 32px 12.5%;
+}
 input[type=radio],input[type=checkbox]
 {
 	display: none;
@@ -60,13 +65,22 @@ td>label
 		}
 	}
 }
+td>label:has(>input:checked)
+{
+	cursor: crosshair;
+}
 #maineditor:has( #blackking:checked) td>label.blackking
 {
 	display: block;
+	cursor: url(blackking.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
 	}
+}
+#maineditor:has( #blackking:checked):has( label.blackking>input:checked) td>label.blackking
+{
+	cursor: not-allowed;
 }
 label.blackking:has(>input:checked)~label
 {
@@ -75,6 +89,7 @@ label.blackking:has(>input:checked)~label
 #maineditor:has( #blackqueen:checked) td>label.blackqueen
 {
 	display: block;
+	cursor: url(blackqueen.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -87,6 +102,7 @@ label.blackqueen:has(>input:checked)~label
 #maineditor:has( #blackrook:checked) td>label.blackrook
 {
 	display: block;
+	cursor: url(blackrook.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -99,6 +115,7 @@ label.blackrook:has(>input:checked)~label
 #maineditor:has( #blackbishop:checked) td>label.blackbishop
 {
 	display: block;
+	cursor: url(blackbishop.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -111,6 +128,7 @@ label.blackbishop:has(>input:checked)~label
 #maineditor:has( #blackknight:checked) td>label.blackknight
 {
 	display: block;
+	cursor: url(blackknight.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -123,6 +141,7 @@ label.blackknight:has(>input:checked)~label
 #maineditor:has( #blackpawn:checked) td>label.blackpawn
 {
 	display: block;
+	cursor: url(blackpawn.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -135,10 +154,15 @@ label.blackpawn:has(>input:checked)~label
 #maineditor:has( #whiteking:checked) td>label.whiteking
 {
 	display: block;
+	cursor: url(whiteking.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
 	}
+}
+#maineditor:has( #whiteking:checked):has( label.whiteking>input:checked) td>label.whiteking
+{
+	cursor: not-allowed;
 }
 label.whiteking:has(>input:checked)~label
 {
@@ -147,6 +171,7 @@ label.whiteking:has(>input:checked)~label
 #maineditor:has( #whitequeen:checked) td>label.whitequeen
 {
 	display: block;
+	cursor: url(whitequeen.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -159,6 +184,7 @@ label.whitequeen:has(>input:checked)~label
 #maineditor:has( #whiterook:checked) td>label.whiterook
 {
 	display: block;
+	cursor: url(whiterook.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -171,6 +197,7 @@ label.whiterook:has(>input:checked)~label
 #maineditor:has( #whitebishop:checked) td>label.whitebishop
 {
 	display: block;
+	cursor: url(whitebishop.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -183,6 +210,7 @@ label.whitebishop:has(>input:checked)~label
 #maineditor:has( #whiteknight:checked) td>label.whiteknight
 {
 	display: block;
+	cursor: url(whiteknight.svg) 32 32, crosshair;
 	&:has(~label>input:checked)
 	{
 		display: none;
@@ -195,4 +223,37 @@ label.whiteknight:has(>input:checked)~label
 #maineditor:has( #whitepawn:checked) td>label.whitepawn
 {
 	display: block;
+	cursor: url(whitepawn.svg) 32 32, crosshair;
+}
+#special
+{
+	display: grid;
+	width: fit-content;
+	margin: auto;
+}
+label.castling
+{
+	background-color: #002000;
+	border: 8px outset #002000;
+	display: block;
+	width: fit-content;
+	cursor: pointer;
+	margin: 16px;
+	&>p
+	{
+		display: inline;
+	}
+	&:hover
+	{
+		background-color: #004000;
+		border-color: #004000;
+	}
+	&:has(>input:checked)
+	{
+		border-style: inset;
+	}
+	&:has(>#blacklong)
+	{
+		grid-column-start: 2;
+	}
 }

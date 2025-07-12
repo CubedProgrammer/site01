@@ -8,6 +8,7 @@
 	<body>
 		<p class="title">Board Editor</p>
 		<nav id="navigationHoverMenu"></nav>
+		<p id="instruction">Click on one of the pieces at the top or bottom, and then click on a square to put it in said square. Clicking on an occupied cell removes the piece on it and vacates the cell.</p>
 		<div id="maineditor">
 			<div id="blackpieces">
 				<input type="radio" name="piecechoice" id="blackking">
@@ -27,6 +28,25 @@
 				<input type="radio" name="piecechoice" id="whitebishop">
 				<input type="radio" name="piecechoice" id="whiteknight">
 				<input type="radio" name="piecechoice" id="whitepawn">
+			</div>
+			<div id="special">
+				<label for="blackshort" class="castling">
+					<input type="checkbox" name="blackshort" id="blackshort">
+					<p>Black O-O</p>
+				</label>
+				<label for="blacklong" class="castling">
+					<input type="checkbox" name="blacklong" id="blacklong">
+					<p>Black O-O-O</p>
+				</label>
+				<label for="whiteshort" class="castling">
+					<input type="checkbox" name="whiteshort" id="whiteshort">
+					<p>White O-O</p>
+				</label>
+				<label for="whitelong" class="castling">
+					<input type="checkbox" name="whitelong" id="whitelong">
+					<p>White O-O-O</p>
+				</label>
+				<input type="checkbox" name="lichess" id="lichess">
 			</div>
 		</div>
 		<p id="navigationEntryFile" class="navigationConfiguration">navigation.txt</p>
