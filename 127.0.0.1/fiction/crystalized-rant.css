@@ -12,6 +12,7 @@ body
 	height: 100vh;
 	position: fixed;
 	background-color: #800080;
+	overflow: scroll;
 	&>a
 	{
 		display: block;
