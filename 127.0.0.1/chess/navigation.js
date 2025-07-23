@@ -1,5 +1,6 @@
 const URL = navigationEntryFile.innerText.toString()
 const BASE_DIRECTORY = navigationBaseDirectory.innerText.toString()
+const current = location.href.substring(location.origin.length + (BASE_DIRECTORY.length === 0 ? 7 : BASE_DIRECTORY.length))
 const getPages = async function()
 {
 	const response = await fetch(URL)
@@ -75,6 +76,7 @@ const buildToggleMenu = function(files)
 		const link = document.createElement('a')
 		const plus = document.createElement('p')
 		const minus = document.createElement('p')
+		const oldname = name
 		if(name.length > 1)
 		{
 			name = name.substring(name.lastIndexOf('/')+1)
@@ -82,6 +84,7 @@ const buildToggleMenu = function(files)
 		rootDiv.className = 'top'
 		checkbox.type = 'checkbox'
 		checkbox.id = 'togglebox' + index
+		checkbox.checked = oldname.length < 2 || current.startsWith(oldname)
 		label.htmlFor = checkbox.id
 		plus.className = 'plus'
 		plus.append('+')

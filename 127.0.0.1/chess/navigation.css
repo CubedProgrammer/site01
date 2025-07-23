@@ -85,8 +85,9 @@
 #navigationToggleMenu
 {
 	background: transparent;
-	overflow: scroll;
+	overflow: auto;
 	margin: auto;
+	padding: 0 16px;
 	& input
 	{
 		display: none;
