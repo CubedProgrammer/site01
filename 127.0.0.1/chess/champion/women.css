@@ -10,6 +10,7 @@ thead>tr
 td
 {
 	max-width: 576px;
+	padding: 8px;
 	&>p
 	{
 		margin: 0;

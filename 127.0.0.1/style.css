@@ -207,6 +207,7 @@ button.order:active
 	& td
 	{
 		width: 25%;
+		height: fit-content;
 		padding: 0;
 	}
 }
