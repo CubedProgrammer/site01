@@ -4,6 +4,7 @@ body
 	font-family: monospace;
 	background-color: #000020;
 	color: #E0E0E0;
+	width: fit-content;
 }
 a
 {
@@ -185,17 +186,19 @@ button.order:active
 {
 	border-spacing: 0;
 	background-color: #000040;
+	width: 96ch;
+	margin: auto;
 	& a
 	{
 		display: block;
 		height: 100%;
-		width: 75%;
+		width: max(75%, 16ch);
 		margin: 0 auto;
 		transition-duration: 500ms;
 		&:hover
 		{
 			background-color: #000080;
-			width: 100%;
+			width: max(100%, 16ch);
 			transition-duration: 500ms;
 		}
 		&>p
