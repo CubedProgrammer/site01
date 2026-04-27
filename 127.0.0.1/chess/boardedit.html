@@ -8,7 +8,12 @@
 	<body>
 		<p class="title">Board Editor</p>
 		<nav id="navigationHoverMenu"></nav>
-		<p id="instruction">Click on one of the pieces at the top or bottom, and then click on a square to put it in said square. Clicking on an occupied cell removes the piece on it and vacates the cell.</p>
+		<div id="instruction">
+			<p>Click on one of the pieces at the top or bottom, and then click on a square to put it in said square. Clicking on an occupied cell removes the piece on it and vacates the cell.</p>
+			<p>There is no drag and drop in this board editor, you MUST click on a piece in the top or bottom, then hover over the board, and then click on a square to place that piece.</p>
+			<p>You also cannot drag pieces on the board, to move a piece, you must click on its current square, then click the square you want to move it to.</p>
+			<p>This board editor is pure CSS, JS is only used to generate the HTML elements.</p>
+		</div>
 		<div id="maineditor">
 			<div id="blackpieces">
 				<input type="radio" name="piecechoice" id="blackking">

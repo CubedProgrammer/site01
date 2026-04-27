@@ -4,7 +4,6 @@ body
 	font-family: monospace;
 	background-color: #000020;
 	color: #E0E0E0;
-	width: fit-content;
 }
 a
 {
@@ -186,19 +185,20 @@ button.order:active
 {
 	border-spacing: 0;
 	background-color: #000040;
-	width: 96ch;
+	width: 48ch;
+	max-width: 100%;
 	margin: auto;
 	& a
 	{
 		display: block;
 		height: 100%;
-		width: max(75%, 16ch);
+		width: 75%;
 		margin: 0 auto;
 		transition-duration: 500ms;
 		&:hover
 		{
 			background-color: #000080;
-			width: max(100%, 16ch);
+			width: 100%;
 			transition-duration: 500ms;
 		}
 		&>p
@@ -218,6 +218,7 @@ button.order:active
 {
 	background-color: #000040;
 	width: fit-content;
+	max-width: 87.5%;
 	padding: 32px;
 	margin: auto;
 }
@@ -225,6 +226,7 @@ button.order:active
 {
 	background-color: #202020;
 	color: inherit;
+	max-width: 100%;
 	width: 64ch;
 	font: inherit;
 	padding: 4px;
