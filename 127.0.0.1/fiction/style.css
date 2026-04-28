@@ -57,10 +57,19 @@ table
 			{
 				margin: 16px;
 			}
+			&>.description
+			{
+				transition-duration: 500ms;
+			}
 		}
 		&:hover>a
 		{
 			padding: 16px 32px;
+			font-size: 40px;
+			&>.description
+			{
+				font-size: 20px;
+			}
 		}
 	}
 }

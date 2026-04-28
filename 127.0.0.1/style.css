@@ -260,3 +260,9 @@ button.order:active
 	background-color: #000040;
 	color: #00E000;
 }
+#useless~p:hover>a
+{
+	background-color: #400000;
+	color: #008000;
+	transition-duration: 250ms;
+}
