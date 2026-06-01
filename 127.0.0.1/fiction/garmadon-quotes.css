@@ -1,0 +1,54 @@
+body
+{
+	font-family: sans-serif, monospace;
+	font-size: 32px;
+	background-color: #400040;
+	color: gold;
+}
+h1
+{
+	text-align: center;
+}
+#quotes
+{
+	width: 75%;
+	margin: auto;
+	&>.qouterbox
+	{
+		background-color: #300060;
+		margin: 1em 0;
+		&>.qbox
+		{
+			width: 75%;
+			padding: 0.25em 0 1.25em 0;
+			margin: auto;
+			&>.qtext
+			{
+				background-color: #400040;
+			}
+			&>.qfrom
+			{
+				margin-left: 2em;
+			}
+			&>.qlink
+			{
+				width: fit-content;
+				border-radius: 0.25em;
+				border: 0.25em solid green;
+				background-color: green;
+				transition-duration: 250ms;
+				display: block;
+				margin: auto;
+				color: inherit;
+				text-decoration: inherit;
+				&:hover
+				{
+					border-radius: 0;
+					border-color: #00C000;
+					background-color: #00C000;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
