@@ -34,7 +34,7 @@ const main = async function()
 	if(resp.ok)
 	{
 		const all = await resp.text();
-		const quoteArr = all.split('\n\n').filter((s) => s.length > 0).map((s) => s.split('\n'));
+		const quoteArr = all.split('\n\n').filter((s) => s.length > 0).map((s) => s.split('\n').filter((t) => t.length > 0));
 		genQuotes(quoteArr);
 	}
 }

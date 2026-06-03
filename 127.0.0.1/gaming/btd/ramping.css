@@ -1,0 +1,159 @@
+body
+{
+	background-color: #FFFFE0;
+	color: #002020;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 32px;
+	display: flex;
+	margin: 0;
+	&:has( #theme:checked)
+	{
+		background-color: #202000;
+		color: #FFFFE0;
+	}
+}
+#options
+{
+	width: 25%;
+	height: 100vh;
+	background-color: #FFFFC0;
+	&:has( #theme:checked)
+	{
+		background-color: #404000;
+		&+div input[type=number]
+		{
+			background-color: #202020;
+			border: 2px solid #E0E0E0;
+		}
+		&+div .calculator
+		{
+			background-color: #404000;
+			border-color: #404000;
+		}
+		&+div button
+		{
+			background-color: #004000;
+			border-color: #004000;
+		}
+	}
+	&:has( #toggleHealth:checked)+div tr:nth-child(odd)
+	{
+		display: table-row;
+	}
+	&:has( #toggleSpeed:checked)+div tr:nth-child(even)
+	{
+		display: table-row;
+	}
+	&:has( #calculator:checked)+div .calculator
+	{
+		display: block;
+	}
+}
+#infodiv
+{
+	width: 75%;
+	height: 100vh;
+	overflow-y: scroll;
+	&>p
+	{
+		margin: 1em;
+	}
+}
+.calculator
+{
+	margin: 32px;
+	background-color: #FFFFC0;
+	border: 16px solid #FFFFC0;
+	border-radius: 32px;
+	display: none;
+}
+.centerbox
+{
+	margin: auto;
+	width: fit-content;
+}
+input[type=checkbox]
+{
+	display: none;
+}
+input[type=number]
+{
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	width: 12ch;
+	background-color: #E0E0E0;
+	border: 2px solid #202020;
+}
+button
+{
+	font-family: inherit;
+	font-size: inherit;
+	background-color: #C0FFC0;
+	border: 16px solid #C0FFC0;
+	border-radius: 24px;
+	display: block;
+	margin: 16px auto;
+	color: inherit;
+	&:hover
+	{
+		cursor: pointer;
+		scale: 1.125;
+	}
+	&:active
+	{
+		scale: 0.875;
+	}
+}
+#result
+{
+	text-align: center;
+	margin: 0;
+}
+label
+{
+	display: block;
+	border: 8px outset darkred;
+	background-color: darkred;
+	text-align: center;
+	color: lightgray;
+	margin: 32px;
+	&:hover
+	{
+		background-color: red;
+		border-color: red;
+		cursor: pointer;
+	}
+}
+#roundlabel
+{
+	display: inline;
+	background-color: transparent;
+	color: inherit;
+	border-style: none;
+}
+input:checked+label
+{
+	border-style: inset;
+}
+h1
+{
+	text-align: center;
+}
+table
+{
+	border-spacing: 0px;
+	border: 1px solid aquamarine;
+	margin: auto;
+	& td
+	{
+		border: 1px solid aquamarine;
+		min-width: 7ch;
+		text-align: center;
+	}
+}
+tbody>tr
+{
+	width: 100%;
+	display: none;
+}

@@ -24,6 +24,8 @@ h1
 			margin: auto;
 			&>.qtext
 			{
+				border: 0.5em solid #400040;
+				border-radius: 1em;
 				background-color: #400040;
 			}
 			&>.qfrom

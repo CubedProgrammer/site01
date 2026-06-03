@@ -1,0 +1,56 @@
+body
+{
+	background-color: #008080;
+	color: #FF8080;
+	font-family: monospace;
+	font-size: 32px;
+}
+a
+{
+	background-color: #E0E000;
+	border: 16px solid #E0E000;
+	border-radius: 16px;
+	text-decoration: none;
+	color: inherit;
+	display: block;
+	&:hover
+	{
+		background-color: #F0F000;
+		border-color: #F0F000;
+		scale: 1.125;
+	}
+}
+.title
+{
+	text-align: center;
+	font-size: 64px;
+	margin: 0.5em 0;
+}
+.content
+{
+	width: 75%;
+	margin: auto;
+}
+#refresh
+{
+	width: fit-content;
+	margin: auto;
+}
+#files
+{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	&>a
+	{
+		width: 75%;
+		margin: 32px auto;
+		&>p
+		{
+			margin: 16px 0;
+		}
+		&>.description
+		{
+			font-size: 16px;
+		}
+	}
+}

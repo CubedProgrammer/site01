@@ -17,11 +17,25 @@ body
 }
 a
 {
+	display: block;
 	color: inherit;
 	text-decoration: none;
+	margin: 32px 0;
 	&>div
 	{
 		width: 75%;
+		border: 16px solid #002000;
+		border-radius: 16px;
 		margin: auto;
+		transition-duration: 500ms;
+		&>p
+		{
+			margin: 0 0 32px 0;
+		}
+	}
+	&:hover>div
+	{
+		background-color: #004000;
+		border-color: #004000;
 	}
 }
