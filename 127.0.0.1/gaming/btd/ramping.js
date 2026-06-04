@@ -122,5 +122,26 @@ function calculateRampingFactor(round)
 }
 
 calcbutton.addEventListener('click', () => {
-	result.innerText = calculateRampingFactor(parseInt(roundNum.value));
+
+	const factors = calculateRampingFactor(parseInt(roundNum.value));
+	for(; result.lastChild; result.removeChild(result.lastChild));
+	const healthRow = document.createElement('tr');
+	const speedRow = document.createElement('tr');
+
+	for(let hp of baseHealths)
+	{
+		const cell = document.createElement('td');
+		cell.append(hp * factors[0] / 100);
+		healthRow.appendChild(cell);
+	}
+
+	for(let s of baseSpeeds)
+	{
+		const cell = document.createElement('td');
+		cell.append(s * factors[1] / 100);
+		speedRow.appendChild(cell);
+	}
+
+	result.append(healthRow, speedRow);
+
 })

@@ -35,14 +35,24 @@ body
 			background-color: #004000;
 			border-color: #004000;
 		}
+		&:has( #toggleHealth:checked)+div tr:nth-child(odd)
+		{
+			background-color: #202000;
+		}
+		&:has( #toggleSpeed:checked)+div tr:nth-child(even)
+		{
+			background-color: #404000;
+		}
 	}
 	&:has( #toggleHealth:checked)+div tr:nth-child(odd)
 	{
 		display: table-row;
+		background-color: #FFFFE0;
 	}
 	&:has( #toggleSpeed:checked)+div tr:nth-child(even)
 	{
 		display: table-row;
+		background-color: #FFFFC0;
 	}
 	&:has( #calculator:checked)+div .calculator
 	{
