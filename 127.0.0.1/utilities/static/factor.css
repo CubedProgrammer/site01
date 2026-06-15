@@ -1,0 +1,47 @@
+body
+{
+	background-color: #200000;
+	color: #E0E0E0;
+	font-family: monospace;
+	font-size: 32px;
+}
+.title
+{
+	font-size: 64px;
+	text-align: center;
+}
+#number
+{
+	display: block;
+	font-family: inherit;
+	font-size: inherit;
+	background-color: #002020;
+	width: 64ch;
+	margin: auto;
+	color: inherit;
+	text-align: right;
+}
+#calculate
+{
+	border: 8px outset #008080;
+	background-color: #008080;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	display: block;
+	margin: 1em auto;
+	&:hover
+	{
+		background-color: #00C0C0;
+		border-color: #00C0C0;
+		cursor: pointer;
+	}
+	&:active
+	{
+		border-style: inset;
+	}
+}
+#result
+{
+	text-align: center;
+}

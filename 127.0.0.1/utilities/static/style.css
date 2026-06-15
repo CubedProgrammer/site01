@@ -5,6 +5,21 @@ body
 	font-family: monospace;
 	font-size: 32px;
 }
+#refresh
+{
+	background-color: #E02020;
+	width: 9ch;
+	border-radius: 8px;
+	display: block;
+	margin: 2em auto;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	&:hover
+	{
+		scale: 1.25;
+	}
+}
 .title
 {
 	font-size: 64px;
