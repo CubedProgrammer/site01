@@ -1,0 +1,56 @@
+body
+{
+	background-color: #002000;
+	color: #E0E0E0;
+	font-family: monospace;
+	font-size: 32px;
+}
+.title
+{
+	text-align: center;
+	font-size: 64px;
+}
+#refresh
+{
+	display: block;
+	background-color: #404000;
+	width: 9ch;
+	padding: 8px;
+	border-radius: 8px;
+	margin: 32px auto;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	&:hover
+	{
+		background-color: #808000;
+		scale: 1.125;
+	}
+}
+.pages
+{
+	width: 75%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	&>a
+	{
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		background-color: #004000;
+		&>p
+		{
+			margin: 16px;
+		}
+		&:hover
+		{
+			scale: 1.125;
+			background-color: #006000;
+		}
+	}
+}
+.desc
+{
+	font-size: 16px;
+}

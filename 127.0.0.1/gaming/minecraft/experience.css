@@ -1,0 +1,50 @@
+body
+{
+	background-color: #004000;
+	color: #C0C0C0;
+	font-size: 32px;
+	font-family: 'Noto Sans', sans-serif, monospace;
+}
+h1
+{
+	text-align: center;
+}
+#calcdiv
+{
+	width: fit-content;
+	max-width: 100%;
+	margin: auto;
+}
+label
+{
+	width: 12ch;
+	display: inline-block;
+	margin: 16px;
+}
+input
+{
+	background-color: #002000;
+	border: 2px solid #C0C000;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+button
+{
+	background-color: #E0E000;
+	border-radius: 16px;
+	padding: 16px;
+	margin: 16px;
+	color: #202020;
+	font: inherit;
+	&:hover
+	{
+		scale: 1.125;
+		background-color: #FFFF20;
+		cursor: pointer;
+	}
+	&:active
+	{
+		scale: 0.875;
+	}
+}
